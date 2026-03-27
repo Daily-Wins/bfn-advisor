@@ -1,0 +1,2522 @@
+[
+  {
+    "regulation": "K2",
+    "dir": "k2-arsredovisning",
+    "file": "01-tillämpning.md",
+    "facts": [
+      {
+        "punkt": "1.1",
+        "type": "changed_rule",
+        "summary": "1 Detta allmänna råd får endast tillämpas av företag som är mindre företag enligt 1 kap"
+      },
+      {
+        "punkt": "1.1A",
+        "type": "new_rule",
+        "summary": "1A Följande mindre företag får inte tillämpa detta allmänna råd:"
+      },
+      {
+        "punkt": "1.1B",
+        "type": "new_rule",
+        "summary": "1B Inte heller följande mindre företag får tillämpa detta allmänna råd:"
+      },
+      {
+        "punkt": "1.1C",
+        "type": "new_rule",
+        "summary": "1B gäller inte om företaget uppfyller högst ett av följande villkor:"
+      },
+      {
+        "punkt": "1.4",
+        "type": "changed_rule",
+        "summary": "ska ett företag som väljer att tillämpa det allmänna rådet tillämpa det i sin helhet och utan avvikelse"
+      },
+      {
+        "punkt": "1.7",
+        "type": "changed_rule",
+        "summary": "7 Är en fråga inte reglerad i detta allmänna råd ska företaget söka vägledning i följande ordning:"
+      }
+    ]
+  },
+  {
+    "regulation": "K2",
+    "dir": "k2-arsredovisning",
+    "file": "02-redovisningsprinciper.md",
+    "facts": [
+      {
+        "punkt": "2.1A",
+        "type": "belopp",
+        "belopp": "7 000 kronor",
+        "summary": "2"
+      },
+      {
+        "punkt": "2.4",
+        "type": "belopp",
+        "belopp": "7 000 kronor",
+        "summary": "2"
+      },
+      {
+        "punkt": "2.4A",
+        "type": "belopp",
+        "belopp": "7 000 kronor",
+        "summary": "2"
+      },
+      {
+        "punkt": "2.4B",
+        "type": "belopp",
+        "belopp": "7 000 kronor",
+        "summary": "2"
+      },
+      {
+        "punkt": "2.11A",
+        "type": "belopp",
+        "tid": "fyra månader",
+        "summary": "2"
+      },
+      {
+        "punkt": "2.1",
+        "type": "changed_rule",
+        "summary": "1 En årsredovisning som är upprättad enligt detta allmänna råd uppfyller de krav som ställs på överskådlighet, god redovisningssed och rättvisande bild enligt 2 kap"
+      },
+      {
+        "punkt": "2.1A",
+        "type": "new_rule",
+        "summary": "1A En årsredovisning som är upprättad enligt detta allmänna råd innehåller inte några avvikelser som går utöver vad som är tillåtet enligt 2 kap"
+      },
+      {
+        "punkt": "2.4",
+        "type": "changed_rule",
+        "summary": "om att inkomster och utgifter som understiger 7 000 kronor inte behöver periodiseras,"
+      },
+      {
+        "punkt": "2.2",
+        "type": "changed_rule",
+        "summary": "om fortlevnadsprincipen"
+      },
+      {
+        "punkt": "6.15",
+        "type": "changed_rule",
+        "summary": "anges när och hur byte av metod får göras vid redovisning av tjänste- och entreprenaduppdrag till fast pris"
+      },
+      {
+        "punkt": "2.4A",
+        "type": "new_rule",
+        "summary": "4A Ett företag får redovisa ett erhållet förskott som avser en vara eller en tjänst som intäkt om förskottet understiger 7 000 kronor, trots att intäkten inte hör till räkenskapsåret"
+      },
+      {
+        "punkt": "2.8",
+        "type": "changed_rule",
+        "summary": "8 Vid byte av tillgång eller tjänst är inkomsten respektive utgiften det verkliga värdet på det som företaget tar emot respektive lämnar"
+      },
+      {
+        "punkt": "2.11",
+        "type": "changed_rule",
+        "summary": "11 Med händelser efter balansdagen avses såväl gynnsamma som ogynnsamma händelser, vilka inträffat mellan balansdagen och den dag då årsredovisningen är upprättad"
+      },
+      {
+        "punkt": "2.11A",
+        "type": "new_rule",
+        "summary": "11A Händelser som bekräftar förhållanden som förelåg på balansdagen men som inträffat efter balansdagen och innan årsredovisningen är upprättad ska beaktas genom att justera beloppen eller att redovisa inte tidigare medtagna poster"
+      }
+    ]
+  },
+  {
+    "regulation": "K2",
+    "dir": "k2-arsredovisning",
+    "file": "03-årsredovisningens-utformning.md",
+    "facts": [
+      {
+        "punkt": "3.1",
+        "type": "changed_rule",
+        "summary": "1 Detta kapitel ska tillämpas när årsredovisningen utformas"
+      },
+      {
+        "punkt": "3.2",
+        "type": "changed_rule",
+        "summary": "2 Årsredovisningens olika delar ska presenteras i ordningen förvaltningsberättelse, resultaträkning, balansräkning och noter"
+      },
+      {
+        "punkt": "3.4",
+        "type": "changed_rule",
+        "summary": "4 Ett företag ska upprätta förvaltningsberättelsen enligt den uppställningsform och med de rubriker och underrubriker som anges i de särskilda reglerna i kapitel 4 för den företagsform som företaget tillhör"
+      },
+      {
+        "punkt": "3.6",
+        "type": "changed_rule",
+        "summary": "3.6 Har upphävts. (BFNAR 2025:2)"
+      },
+      {
+        "punkt": "3.7",
+        "type": "changed_rule",
+        "summary": "7 Årsredovisningen ska även innehålla uppgift om"
+      },
+      {
+        "punkt": "3.10",
+        "type": "changed_rule",
+        "summary": "10 De jämförelsetal som ska lämnas enligt 3 kap"
+      },
+      {
+        "punkt": "3.13",
+        "type": "changed_rule",
+        "summary": "3.13 Har upphävts. (BFNAR 2025:2)"
+      },
+      {
+        "punkt": "3.14",
+        "type": "changed_rule",
+        "summary": "3.14 Har upphävts. (BFNAR 2025:2)"
+      }
+    ]
+  },
+  {
+    "regulation": "K2",
+    "dir": "k2-arsredovisning",
+    "file": "04a-uppställningsformer-resultaträkning.md",
+    "facts": [
+      {
+        "punkt": "4.1",
+        "type": "changed_rule",
+        "summary": "1 Detta kapitel ska tillämpas när förvaltningsberättelsen, resultaträkningen och balansräkningen upprättas"
+      },
+      {
+        "punkt": "4.4",
+        "type": "changed_rule",
+        "summary": "7 och gäller för alla företagsformer"
+      },
+      {
+        "punkt": "4.5",
+        "type": "changed_rule",
+        "summary": "5 En resultaträkning i förkortad form enligt 3 kap"
+      }
+    ]
+  },
+  {
+    "regulation": "K2",
+    "dir": "k2-arsredovisning",
+    "file": "04b-uppställningsformer-balansräkning.md",
+    "facts": [
+      {
+        "punkt": "4.8",
+        "type": "belopp",
+        "tid": "ett år",
+        "summary": "4"
+      },
+      {
+        "punkt": "4.6",
+        "type": "changed_rule",
+        "summary": "6 Ett företag ska i balansräkningen ange räkenskapsårets och föregående räkenskapsårs balansdag"
+      },
+      {
+        "punkt": "4.8",
+        "type": "changed_rule",
+        "summary": "8 En balansräkning i förkortad form enligt 3 kap"
+      }
+    ]
+  },
+  {
+    "regulation": "K2",
+    "dir": "k2-arsredovisning",
+    "file": "04c-uppställningsformer-särskilda-regler.md",
+    "facts": [
+      {
+        "punkt": "4.9",
+        "type": "changed_rule",
+        "summary": "9 Ett aktiebolag ska upprätta förvaltningsberättelsen med nedanstående rubriker och underrubriker:"
+      },
+      {
+        "punkt": "4.10",
+        "type": "changed_rule",
+        "summary": "10 Ett aktiebolag ska upprätta balansräkningen med tillägg av nedanstående rubrik före rubriken Anläggningstillgångar:"
+      },
+      {
+        "punkt": "4.11",
+        "type": "changed_rule",
+        "summary": "11 Ett aktiebolag ska upprätta balansräkningen med tillägg av nedanstående post under rubriken Finansiella anläggningstillgångar"
+      },
+      {
+        "punkt": "4.12",
+        "type": "changed_rule",
+        "summary": "12 Ett aktiebolag ska upprätta balansräkningen med nedanstående underrubriker, poster och summeringsrader under rubriken Eget kapital:"
+      },
+      {
+        "punkt": "4.13",
+        "type": "changed_rule",
+        "summary": "13 En ekonomisk förening ska upprätta förvaltningsberättelsen med nedanstående rubriker och underrubriker:"
+      },
+      {
+        "punkt": "4.14",
+        "type": "changed_rule",
+        "summary": "14 En ekonomisk förening ska upprätta resultaträkningen med tillägg av nedanstående post under rubriken Bokslutsdispositioner:"
+      },
+      {
+        "punkt": "4.16",
+        "type": "changed_rule",
+        "summary": "16 En ekonomisk förening ska upprätta balansräkningen med nedanstående underrubriker, poster och summeringsrader under rubriken Eget kapital:"
+      },
+      {
+        "punkt": "4.17",
+        "type": "changed_rule",
+        "summary": "17 Ett handelsbolag ska upprätta förvaltningsberättelsen med nedanstående rubriker och underrubriker:"
+      },
+      {
+        "punkt": "4.18",
+        "type": "changed_rule",
+        "summary": "18 Ett handelsbolag ska upprätta balansräkningen med tillägg av nedanstående post under rubriken Finansiella anläggningstillgångar"
+      },
+      {
+        "punkt": "4.20",
+        "type": "changed_rule",
+        "summary": "20 En stiftelse ska upprätta förvaltningsberättelsen med nedanstående rubriker och underrubriker:"
+      },
+      {
+        "punkt": "4.21",
+        "type": "changed_rule",
+        "summary": "21 En stiftelse ska upprätta resultaträkningen med tillägg av nedanstående poster under rubriken Rörelseintäkter, lagerförändringar m"
+      },
+      {
+        "punkt": "3.5",
+        "type": "changed_rule",
+        "summary": "får benämningen av posten anpassas om det bättre beskriver postens innehåll"
+      },
+      {
+        "punkt": "4.29",
+        "type": "changed_rule",
+        "summary": "29 En ideell förening ska upprätta resultaträkningen med tillägg av nedanstående poster under rubriken Rörelseintäkter, lagerförändringar m"
+      },
+      {
+        "punkt": "4.32",
+        "type": "changed_rule",
+        "summary": "32 En ideell förening ska upprätta balansräkningen med tillägg av nedanstående post under rubrikerna Långfristiga skulder respektive Kortfristiga skulder:"
+      },
+      {
+        "punkt": "4.34",
+        "type": "changed_rule",
+        "summary": "34 En samfällighetsförening ska upprätta förvaltningsberättelsen med nedanstående rubriker och underrubriker:"
+      },
+      {
+        "punkt": "4.35",
+        "type": "changed_rule",
+        "summary": "35 En samfällighetsförening ska upprätta resultaträkningen med tillägg av nedanstående poster under rubriken Rörelseintäkter, lagerförändringar m"
+      },
+      {
+        "punkt": "4.36A",
+        "type": "new_rule",
+        "summary": "36A Häradsallmänningar och allmänningsskogar ska upprätta balansräkningen med nedanstående underrubriker, poster och summeringsrader under rubriken Eget kapital:"
+      },
+      {
+        "punkt": "4.37",
+        "type": "changed_rule",
+        "summary": "37 En filial ska upprätta balansräkningen med nedanstående poster och summeringsrader under rubriken Eget kapital:"
+      }
+    ]
+  },
+  {
+    "regulation": "K2",
+    "dir": "k2-arsredovisning",
+    "file": "05-förvaltningsberättelsen.md",
+    "facts": [
+      {
+        "punkt": "5.1",
+        "type": "changed_rule",
+        "summary": "Detta kapitel ska tillämpas när förvaltningsberättelsen upprättas"
+      },
+      {
+        "punkt": "5.2",
+        "type": "changed_rule",
+        "summary": "Uppgift om företagets säte enligt 2 kap"
+      },
+      {
+        "punkt": "5.4",
+        "type": "changed_rule",
+        "summary": "Med sådana händelser av väsentlig betydelse för företaget som har inträffat under räkenskapsåret enligt 6 kap"
+      },
+      {
+        "punkt": "5.6",
+        "type": "changed_rule",
+        "summary": "I aktiebolag avses med sådana förhållanden som är viktiga för bedömningen av utvecklingen av bolagets verksamhet, ställning och resultat enligt 6 kap"
+      },
+      {
+        "punkt": "5.14",
+        "type": "changed_rule",
+        "summary": "För att uppfylla kravet på en rättvisande översikt enligt 6 kap"
+      },
+      {
+        "punkt": "5.15",
+        "type": "changed_rule",
+        "summary": "I ideella föreningar avses med sådana förhållanden som är viktiga för bedömningen av utvecklingen av föreningens verksamhet, ställning och resultat enligt 6 kap"
+      },
+      {
+        "punkt": "5.16",
+        "type": "changed_rule",
+        "summary": "En ideell förening ska i förvaltningsberättelsen lämna uppgift om hur föreningens ändamål har främjats under räkenskapsåret"
+      },
+      {
+        "punkt": "5.17A",
+        "type": "new_rule",
+        "summary": "En ideell förening får i förvaltningsberättelsen lämna förslag till dispositioner beträffande föreningens över- eller underskott"
+      },
+      {
+        "punkt": "5.18",
+        "type": "changed_rule",
+        "summary": "För att uppfylla kravet på en rättvisande översikt enligt 6 kap"
+      },
+      {
+        "punkt": "5.19",
+        "type": "changed_rule",
+        "summary": "En samfällighetsförening får i förvaltningsberättelsen lämna förslag till dispositioner beträffande föreningens över- eller underskott"
+      }
+    ]
+  },
+  {
+    "regulation": "K2",
+    "dir": "k2-arsredovisning",
+    "file": "06a-rörelseintäkter-grundregler.md",
+    "facts": [
+      {
+        "punkt": "6.6",
+        "type": "belopp",
+        "belopp": "7 000 kronor, 300 000 kronor, 50 000 kronor, 100 000 kronor",
+        "tid": "tre år",
+        "summary": "Ett företag ska redovisa en inkomst som intäkt om"
+      },
+      {
+        "punkt": "6.24",
+        "type": "belopp",
+        "belopp": "100 000 kronor, 80 000 kronor, 150 000 kronor, 175 000 kronor, 17 000 kronor, 29 500 kronor",
+        "summary": "Uppdrag till fast pris som inte är fullgjorda och som redovisas enligt alternativregeln ska redovisas i följande poster:"
+      },
+      {
+        "punkt": "6.1",
+        "type": "changed_rule",
+        "summary": "Detta kapitel ska tillämpas vid redovisning av rörelseintäkter"
+      },
+      {
+        "punkt": "16.6",
+        "type": "changed_rule",
+        "summary": "finns ett gränsvärde för när avsättningar inte behöver redovisas"
+      },
+      {
+        "punkt": "6.9",
+        "type": "changed_rule",
+        "summary": "Ett provisionsbaserat uppdrag är ett uppdrag för vilket inkomsten grundar sig på utfallet av försäljning av andras tillgångar eller utförda tjänster"
+      },
+      {
+        "punkt": "6.10",
+        "type": "changed_rule",
+        "summary": "Ett uppdrag på löpande räkning är ett uppdrag för vilket inkomsten uteslutande eller så gott som uteslutande grundar sig på ett avtalat arvode per tidsenhet, den faktiska tidsåtgången och de eventuella faktiska utgifterna för uppdraget"
+      },
+      {
+        "punkt": "6.11",
+        "type": "changed_rule",
+        "summary": "eftersom ett entreprenaduppdrag varken utformas eller prissätts på så sätt att ersättning utgår för den överenskomna tidsperioden"
+      },
+      {
+        "punkt": "6.15",
+        "type": "changed_rule",
+        "summary": "Uppdrag till fast pris ska redovisas antingen enligt en huvudregel eller enligt en alternativregel"
+      },
+      {
+        "punkt": "6.16",
+        "type": "changed_rule",
+        "summary": "Enligt huvudregeln ska en inkomst från ett uppdrag till fast pris redovisas som intäkt om företaget på ett tillförlitligt sätt kan beräkna"
+      },
+      {
+        "punkt": "6.18",
+        "type": "changed_rule",
+        "summary": "ska samma metod för att beräkna färdigställandegraden tillämpas konsekvent på uppdrag inom samma typ av verksamhet"
+      },
+      {
+        "punkt": "6.19",
+        "type": "changed_rule",
+        "summary": "ska redovisas som kostnader under respektive rubrik (Råvaror och förnödenheter, Övriga externa kostnader och Personalkostnader)"
+      },
+      {
+        "punkt": "6.23",
+        "type": "changed_rule",
+        "summary": "ska redovisas som en positiv justeringspost i resultaträkningen i posten Förändring av lager av produkter i arbete, färdiga varor och pågående arbete för annans räkning"
+      }
+    ]
+  },
+  {
+    "regulation": "K2",
+    "dir": "k2-arsredovisning",
+    "file": "06b-rörelseintäkter-övriga-och-särskilda.md",
+    "facts": [
+      {
+        "punkt": "6.26",
+        "type": "changed_rule",
+        "summary": "Nedanstående inkomster ska redovisas som intäkt enligt följande:"
+      },
+      {
+        "punkt": "2.11",
+        "type": "changed_rule",
+        "summary": "Ett leasingavtal är ett avtal enligt vilket en leasegivare på avtalade villkor under en avtalad period ger en leasetagare rätt att använda en tillgång i utbyte mot betalning"
+      },
+      {
+        "punkt": "6.30",
+        "type": "changed_rule",
+        "summary": "Bidrag som avser att täcka rörelsekostnader ska redovisas i posten Övriga rörelseintäkter"
+      },
+      {
+        "punkt": "6.34",
+        "type": "changed_rule",
+        "summary": "Uttag ur näringsverksamheten av en tillgång eller en tjänst som ska tas upp till beskattning enligt inkomstskattelagen (1999:1229) hos en delägare i ett handelsbolag ska redovisas som inkomst i handelsbolaget"
+      },
+      {
+        "punkt": "6.41",
+        "type": "changed_rule",
+        "summary": "Bidrag som erhålls till en ideell förenings verksamhet och som ska redovisas som intäkt, redovisas i posten Bidrag"
+      }
+    ]
+  },
+  {
+    "regulation": "K2",
+    "dir": "k2-arsredovisning",
+    "file": "07-rörelsekostnader.md",
+    "facts": [
+      {
+        "punkt": "7.8",
+        "type": "belopp",
+        "belopp": "7 000 kronor, 300 000 kronor, 50 000 kronor, 100 000 kronor",
+        "summary": "En utgift som inte kan hänföras till någon vara eller annan prestation ska redovisas som kostnad direkt"
+      },
+      {
+        "punkt": "7.9",
+        "type": "belopp",
+        "belopp": "20 000 kronor, 25 000 kronor",
+        "tid": "fem månader, tre år, ett år",
+        "summary": "Återkommer varje räkenskapsår samma slag av utgift, som inte är personalutgift, får utgiften redovisas som kostnad det räkenskapsår företaget normalt erhåller faktura eller gör en utbetalning enligt a"
+      },
+      {
+        "punkt": "7.1",
+        "type": "changed_rule",
+        "summary": "Detta kapitel ska tillämpas vid redovisning av rörelsekostnader"
+      },
+      {
+        "punkt": "7.2",
+        "type": "changed_rule",
+        "summary": "En utgift är det som ett företag lämnar eller kommer att lämna till följd av en transaktion och som minskar företagets eget kapital"
+      },
+      {
+        "punkt": "2.8",
+        "type": "changed_rule",
+        "summary": "finns regler om utgiftens storlek vid byten"
+      },
+      {
+        "punkt": "7.7",
+        "type": "changed_rule",
+        "summary": "En utgift för en tjänst eller annan prestation som utförs eller på annat sätt tillhandahålls efter det räkenskapsår den avser ska redovisas som kostnad det räkenskapsår tjänsten eller prestationen avser"
+      }
+    ]
+  },
+  {
+    "regulation": "K2",
+    "dir": "k2-arsredovisning",
+    "file": "08-finansiella-poster.md",
+    "facts": [
+      {
+        "punkt": "8.8",
+        "type": "belopp",
+        "belopp": "7 000 kronor",
+        "summary": "Dröjsmålsränta som utgör ett oväsentligt belopp får redovisas som rörelseintäkt respektive rörelsekostnad"
+      },
+      {
+        "punkt": "8.1",
+        "type": "changed_rule",
+        "summary": "Detta kapitel ska tillämpas vid redovisning av finansiella poster"
+      },
+      {
+        "punkt": "6.6",
+        "type": "changed_rule",
+        "summary": "första stycket normalt övergår, dvs"
+      },
+      {
+        "punkt": "2.11",
+        "type": "changed_rule",
+        "summary": "11A, inte ska beaktas"
+      }
+    ]
+  },
+  {
+    "regulation": "K2",
+    "dir": "k2-arsredovisning",
+    "file": "09-tillgångar.md",
+    "facts": [
+      {
+        "punkt": "9.6",
+        "type": "belopp",
+        "tid": "fem år",
+        "summary": "9"
+      },
+      {
+        "punkt": "9.1",
+        "type": "changed_rule",
+        "summary": "1 Detta kapitel ska tillämpas vid redovisning av tillgångar"
+      },
+      {
+        "punkt": "9.3A",
+        "type": "new_rule",
+        "summary": "3A En tilläggsköpeskilling ska läggas till anskaffningsvärdet för de förvärvade tillgångarna det räkenskapsår då den har fastställts, om den är hänförlig till"
+      },
+      {
+        "punkt": "7.13",
+        "type": "changed_rule",
+        "summary": "4 vilka innebär nettoredovisning"
+      },
+      {
+        "punkt": "9.8",
+        "type": "changed_rule",
+        "summary": "I de fall försäkringsbolaget ersätter en skadad tillgång med en annan tillgång ska punkt 2"
+      },
+      {
+        "punkt": "9.11",
+        "type": "changed_rule",
+        "summary": "innebär att anskaffningsvärdet för en anläggningstillgång som tillförs bolaget som apportegendom normalt är tillgångens marknadsvärde"
+      }
+    ]
+  },
+  {
+    "regulation": "K2",
+    "dir": "k2-arsredovisning",
+    "file": "10a-anläggningstillgångar-anskaffning-avskrivning.md",
+    "facts": [
+      {
+        "punkt": "10.6",
+        "type": "belopp",
+        "tid": "tre år",
+        "summary": "10"
+      },
+      {
+        "punkt": "10.8",
+        "type": "belopp",
+        "belopp": "100 000 kronor, 120 000 kronor",
+        "tid": "fem år",
+        "summary": "10"
+      },
+      {
+        "punkt": "10.27",
+        "type": "belopp",
+        "tid": "fem år, tio år, fyra år",
+        "summary": "10"
+      },
+      {
+        "punkt": "10.1",
+        "type": "changed_rule",
+        "summary": "1 Detta kapitel ska tillämpas vid redovisning av immateriella och materiella anläggningstillgångar"
+      },
+      {
+        "punkt": "10.21",
+        "type": "changed_rule",
+        "summary": "2 innebär att en byggnad som består av flera delar som är nödvändiga för att byggnaden ska kunna användas som byggnad, såsom stomme, tak, fasad och fönster, utgör *en* materiell anläggningstillgång"
+      },
+      {
+        "punkt": "10.6",
+        "type": "changed_rule",
+        "summary": "6 En materiell anläggningstillgång får redovisas som kostnad, om den kan antas ha en ekonomisk livslängd på högst tre år"
+      },
+      {
+        "punkt": "9.2",
+        "type": "changed_rule",
+        "summary": "andra stycket ska förbättringsutgifter på annans fastighet redovisas som tillgång"
+      },
+      {
+        "punkt": "10.12",
+        "type": "changed_rule",
+        "summary": "12 Anskaffningsvärdet för en materiell anläggningstillgång som tidigare leasats utgörs av"
+      },
+      {
+        "punkt": "10.23",
+        "type": "changed_rule",
+        "summary": "23 Avskrivning ska påbörjas det år tillgången tas i bruk"
+      },
+      {
+        "punkt": "10.26",
+        "type": "changed_rule",
+        "summary": "26 Fastställd avskrivningsplan ska omprövas endast om nedskrivning gjorts eller om planen är uppenbart felaktig"
+      },
+      {
+        "punkt": "10.27",
+        "type": "changed_rule",
+        "summary": "27 Nyttjandeperioden för maskiner, inventarier och immateriella anläggningstillgångar får bestämmas till fem år"
+      }
+    ]
+  },
+  {
+    "regulation": "K2",
+    "dir": "k2-arsredovisning",
+    "file": "10b-anläggningstillgångar-nedskrivning-särskilda.md",
+    "facts": [
+      {
+        "punkt": "10.34",
+        "type": "belopp",
+        "tid": "fem år",
+        "summary": "10"
+      },
+      {
+        "punkt": "10.35",
+        "type": "belopp",
+        "tid": "fem år, två år",
+        "summary": "10"
+      },
+      {
+        "punkt": "10.36",
+        "type": "belopp",
+        "tid": "fem år, två år",
+        "summary": "10"
+      },
+      {
+        "punkt": "10.32",
+        "type": "changed_rule",
+        "summary": "32 Varje avskrivningsenhet ska nedskrivningsprövas för sig"
+      },
+      {
+        "punkt": "10.41",
+        "type": "changed_rule",
+        "summary": "41 Uppskrivning av byggnad ska skrivas av under byggnadens återstående nyttjandeperiod"
+      }
+    ]
+  },
+  {
+    "regulation": "K2",
+    "dir": "k2-arsredovisning",
+    "file": "11-finansiella-anläggningstillgångar.md",
+    "facts": [
+      {
+        "punkt": "11.2",
+        "type": "belopp",
+        "tid": "fem år",
+        "summary": "11"
+      },
+      {
+        "punkt": "11.20",
+        "type": "belopp",
+        "belopp": "25 000 kronor, 200 000 kronor, 20 000 kronor",
+        "summary": "11"
+      },
+      {
+        "punkt": "11.23",
+        "type": "belopp",
+        "belopp": "50 000 kronor, 15 000 kronor, 35 000 kronor, 40 000 kronor, 25 000 kronor",
+        "summary": "11"
+      },
+      {
+        "punkt": "11.26",
+        "type": "belopp",
+        "belopp": "25 000 kronor",
+        "summary": "11"
+      },
+      {
+        "punkt": "11.1",
+        "type": "changed_rule",
+        "summary": "1 Detta kapitel ska tillämpas vid redovisning av finansiella anläggningstillgångar"
+      },
+      {
+        "punkt": "9.5",
+        "type": "changed_rule",
+        "summary": "är det avsikten vid förvärvet som avgör om en tillgång ska klassificeras som en anläggningstillgång eller en omsättningstillgång"
+      },
+      {
+        "punkt": "11.6",
+        "type": "changed_rule",
+        "summary": "framgår dock att en värdepappersportfölj ska ses som en helhet även om förändringar inom portföljen görs under året"
+      },
+      {
+        "punkt": "11.11",
+        "type": "changed_rule",
+        "summary": "11 Erhållen emissionsinsats ska öka det redovisade värdet på andelen när behörigt organ har fattat beslut om insatsemission"
+      },
+      {
+        "punkt": "2.11",
+        "type": "changed_rule",
+        "summary": "11A om händelser efter balansdagen"
+      },
+      {
+        "punkt": "11.13A",
+        "type": "new_rule",
+        "summary": "13A Det redovisade värdet på en kapitalförsäkring ska minskas med den del av ett uttag ur försäkringen som leder till att försäkringens värde vid uttagstillfället understiger det redovisade värdet"
+      },
+      {
+        "punkt": "11.23",
+        "type": "changed_rule",
+        "summary": "innan jämförelse görs mellan det redovisade värdet och värdet på balansdagen"
+      },
+      {
+        "punkt": "11.20",
+        "type": "changed_rule",
+        "summary": "första stycket, och därefter görs en bedömning för övriga tillgångar enligt andra stycket"
+      }
+    ]
+  },
+  {
+    "regulation": "K2",
+    "dir": "k2-arsredovisning",
+    "file": "12-varulager.md",
+    "facts": [
+      {
+        "punkt": "12.6",
+        "type": "belopp",
+        "belopp": "100 000 kronor, 120 000 kronor",
+        "summary": "12"
+      }
+    ]
+  },
+  {
+    "regulation": "K2",
+    "dir": "k2-arsredovisning",
+    "file": "14-kortfristiga-placeringar.md",
+    "facts": [
+      {
+        "punkt": "14.1",
+        "type": "changed_rule",
+        "summary": "1 Detta kapitel ska tillämpas vid redovisning av kortfristiga placeringar samt kassa och bank"
+      },
+      {
+        "punkt": "14.2",
+        "type": "changed_rule",
+        "summary": "2 En placering som förfaller eller som företaget vid förvärvet avser att avyttra inom 12 månader efter balansdagen är en kortfristig placering"
+      },
+      {
+        "punkt": "9.5",
+        "type": "changed_rule",
+        "summary": "är det avsikten vid förvärvet som avgör om en tillgång ska klassificeras som en anläggningstillgång eller en omsättningstillgång"
+      }
+    ]
+  },
+  {
+    "regulation": "K2",
+    "dir": "k2-arsredovisning",
+    "file": "15-eget-kapital.md",
+    "facts": [
+      {
+        "punkt": "15.1",
+        "type": "changed_rule",
+        "summary": "1 Detta kapitel ska tillämpas vid redovisning av eget kapital och obeskattade reserver"
+      },
+      {
+        "punkt": "15.2",
+        "type": "changed_rule",
+        "summary": "2 Eget kapital är skillnaden mellan redovisade tillgångar och summan av redovisade skulder, avsättningar och obeskattade reserver"
+      },
+      {
+        "punkt": "15.6",
+        "type": "changed_rule",
+        "summary": "6 När behörigt organ har fattat beslut om återbetalning av ett villkorat aktieägartillskott ska fritt eget kapital minskas"
+      },
+      {
+        "punkt": "15.9",
+        "type": "changed_rule",
+        "summary": "9 Insatsemission ska redovisas som en omföring från fritt till bundet eget kapital när behörigt organ har fattat beslut om insatsemission"
+      },
+      {
+        "punkt": "15.11",
+        "type": "changed_rule",
+        "summary": "15.11 Har upphävts. (BFNAR 2025:2)"
+      },
+      {
+        "punkt": "15.12",
+        "type": "changed_rule",
+        "summary": "12 En ekonomisk förening ska redovisa vinstutdelning som en minskning av fritt eget kapital när behörigt organ har fattat beslut om att utdelning ska lämnas"
+      },
+      {
+        "punkt": "7.19",
+        "type": "changed_rule",
+        "summary": "får ett lämnat bidrag inte redovisas som kostnad i avkastningsstiftelser, pensionsstiftelser, personalstiftelser och vinstandelsstiftelser"
+      },
+      {
+        "punkt": "15.23C",
+        "type": "new_rule",
+        "summary": "23C Reservering till underhålls- och förnyelsefond ska redovisas som en omföring inom eget kapital när behörigt organ har fattat beslut om att reserveringen ska göras och beslutet verkställs"
+      }
+    ]
+  },
+  {
+    "regulation": "K2",
+    "dir": "k2-arsredovisning",
+    "file": "16-avsättningar.md",
+    "facts": [
+      {
+        "punkt": "16.6",
+        "type": "belopp",
+        "belopp": "25 000 kronor",
+        "summary": "16"
+      },
+      {
+        "punkt": "16.11",
+        "type": "belopp",
+        "tid": "tio år",
+        "summary": "16"
+      },
+      {
+        "punkt": "16.20",
+        "type": "belopp",
+        "belopp": "25 000 kronor",
+        "summary": "16"
+      },
+      {
+        "punkt": "16.1",
+        "type": "changed_rule",
+        "summary": "1 Detta kapitel ska tillämpas vid redovisning av avsättningar"
+      },
+      {
+        "punkt": "16.2",
+        "type": "changed_rule",
+        "summary": "I annat fall kan det bli fråga om en eventualförpliktelse, se kapitel 18"
+      },
+      {
+        "punkt": "9.3A",
+        "type": "new_rule",
+        "summary": "ska en tilläggsköpeskilling som är hänförlig till ett förvärv av andelar i ett företag läggas till anskaffningsvärdet för de förvärvade tillgångarna först det räkenskapsår då tilläggsköpeskillingen har fastställts"
+      },
+      {
+        "punkt": "16.8",
+        "type": "changed_rule",
+        "summary": "8 En avsättning till följd av garantiåtaganden får beräknas enligt inkomstskattelagen (1999:1229) om det kan antas att det värde en sådan beräkning ger inte avviker mer än 20 procent från det värde som en beräkning enligt punkt 16"
+      },
+      {
+        "punkt": "16.13",
+        "type": "changed_rule",
+        "summary": "13 En avsättning i balansräkningen ska omprövas varje balansdag"
+      },
+      {
+        "punkt": "16.15",
+        "type": "changed_rule",
+        "summary": "15 En återföring eller en förändring i avsättningens redovisade värde ska redovisas i den kostnadspost som avsättningen hänför sig till"
+      },
+      {
+        "punkt": "16.18",
+        "type": "changed_rule",
+        "summary": "18 Om värdet på en av företaget ägd tillgång ska täcka både ett åtagande om pension och särskild löneskatt enligt lagen (1991:687) om särskild löneskatt på pensionskostnader, ska summan av åtagandet för pension och den särskilda löneskatten tas upp t"
+      }
+    ]
+  },
+  {
+    "regulation": "K2",
+    "dir": "k2-arsredovisning",
+    "file": "17-skulder.md",
+    "facts": [
+      {
+        "punkt": "17.1",
+        "type": "changed_rule",
+        "summary": "1 Detta kapitel ska tillämpas vid redovisning av skulder"
+      },
+      {
+        "punkt": "17.2",
+        "type": "changed_rule",
+        "summary": "2 Ett företag ska redovisa en skuld om"
+      },
+      {
+        "punkt": "17.3",
+        "type": "changed_rule",
+        "summary": "3 En skuld som är tvistig ska redovisas som skuld om tvisten rör skuldens existens, belopp, kvaliteten på det levererade eller liknande"
+      },
+      {
+        "punkt": "17.6",
+        "type": "changed_rule",
+        "summary": "6 En skuld ska värderas till det belopp som krävs för att reglera åtagandet"
+      }
+    ]
+  },
+  {
+    "regulation": "K2",
+    "dir": "k2-arsredovisning",
+    "file": "18-noter.md",
+    "facts": [
+      {
+        "punkt": "17.5",
+        "type": "belopp",
+        "tid": "fem år",
+        "summary": "andra stycket"
+      },
+      {
+        "punkt": "18.1",
+        "type": "changed_rule",
+        "summary": "1 Detta kapitel ska tillämpas på noter som ska lämnas i årsredovisningen"
+      },
+      {
+        "punkt": "3.2",
+        "type": "changed_rule",
+        "summary": "ska noterna placeras efter balansräkningen"
+      },
+      {
+        "punkt": "18.3",
+        "type": "changed_rule",
+        "summary": "a får användare av årsredovisningen information om vilka regler och principer som företaget har tillämpat vid upprättandet av årsredovisningen"
+      },
+      {
+        "punkt": "18.5",
+        "type": "changed_rule",
+        "summary": "5 Ett företag som utför tjänste- eller entreprenaduppdrag till fast pris ska lämna upplysning om företaget tillämpar huvudregeln eller alternativregeln"
+      },
+      {
+        "punkt": "2.12",
+        "type": "changed_rule",
+        "summary": "ska ett fel rättas genom att de ingående balanserna för räkenskapsåret räknas om"
+      },
+      {
+        "punkt": "18.11",
+        "type": "changed_rule",
+        "summary": "11 Har anläggningstillgångar anskaffats med bidrag ska uppgift om anskaffningsvärde enligt 5 kap"
+      },
+      {
+        "punkt": "18.12",
+        "type": "changed_rule",
+        "summary": "12 Ett företag som redovisar tjänste- eller entreprenaduppdrag till fast pris enligt alternativregeln, se punkterna 6"
+      },
+      {
+        "punkt": "6.24",
+        "type": "changed_rule",
+        "summary": "ska uppdrag som inte är resultatavräknade på balansdagen redovisas i posterna Pågående arbete för annans räkning"
+      },
+      {
+        "punkt": "18.14",
+        "type": "changed_rule",
+        "summary": "14 Den upplysning som ska lämnas enligt 5 kap"
+      },
+      {
+        "punkt": "18.15",
+        "type": "changed_rule",
+        "summary": "15 En eventualförpliktelse är ett *möjligt* legalt åtagande till följd av en inträffad händelse för vilket"
+      },
+      {
+        "punkt": "18.16",
+        "type": "changed_rule",
+        "summary": "16 En upplysning enligt 5 kap"
+      },
+      {
+        "punkt": "18.21",
+        "type": "changed_rule",
+        "summary": "21 Sådan uppgift som ett företag ska lämna enligt 5 kap"
+      }
+    ]
+  },
+  {
+    "regulation": "K2",
+    "dir": "k2-arsredovisning",
+    "file": "19-koncern-intresseföretag.md",
+    "facts": [
+      {
+        "punkt": "19.2",
+        "type": "belopp",
+        "tid": "ett år",
+        "summary": "19"
+      },
+      {
+        "punkt": "19.8",
+        "type": "belopp",
+        "belopp": "25 000 kronor",
+        "summary": "19"
+      },
+      {
+        "punkt": "19.10",
+        "type": "belopp",
+        "belopp": "50 000 kronor, 15 000 kronor, 35 000 kronor, 40 000 kronor, 25 000 kronor",
+        "summary": "19"
+      },
+      {
+        "punkt": "19.21",
+        "type": "belopp",
+        "belopp": "25 000 kronor",
+        "summary": "19"
+      },
+      {
+        "punkt": "19.1",
+        "type": "changed_rule",
+        "summary": "1 Detta kapitel ska tillämpas när ett företag redovisar andelar i ett koncernföretag, intresseföretag eller gemensamt styrt företag"
+      },
+      {
+        "punkt": "2.11",
+        "type": "changed_rule",
+        "summary": "11A om händelser efter balansdagen"
+      },
+      {
+        "punkt": "19.6A",
+        "type": "new_rule",
+        "summary": "6A Ett företag som tillämpar detta allmänna råd får inte värdera andelar i intresseföretag enligt kapitalandelsmetoden, trots att 4 kap"
+      },
+      {
+        "punkt": "19.7",
+        "type": "changed_rule",
+        "summary": "7 Vid en nedskrivningsprövning ska det redovisade värdet på andelar i ett koncernföretag eller ett gemensamt styrt företag som är anläggningstillgång och andelar i ett intresseföretag jämföras med ett värde beräknat enligt de metoder som används vid "
+      },
+      {
+        "punkt": "19.8",
+        "type": "changed_rule",
+        "summary": "8 Är värdet på andelar i ett koncernföretag eller ett gemensamt styrt företag som är anläggningstillgång eller andelar i ett intresseföretag noll kronor på balansdagen, ska tillgången *alltid* skrivas ned till noll kronor"
+      }
+    ]
+  },
+  {
+    "regulation": "K2",
+    "dir": "k2-arsredovisning",
+    "file": "20-byte-till-detta-allmänna-råd.md",
+    "facts": [
+      {
+        "punkt": "20.1",
+        "type": "changed_rule",
+        "summary": "1 Detta kapitel ska tillämpas när ett företag som tillämpat annan normgivning byter till att upprätta årsredovisning enligt detta allmänna råd"
+      },
+      {
+        "punkt": "20.9A",
+        "type": "new_rule",
+        "summary": "Ett företag som bytt från att upprätta årsbokslut med tillämpning av punkt 1"
+      },
+      {
+        "punkt": "20.1B",
+        "type": "new_rule",
+        "summary": "1B För ett företag som väljer att räkna om jämförelsetalen är tidpunkten för övergång första dagen på det närmast föregående räkenskapsåret"
+      },
+      {
+        "punkt": "20.1C",
+        "type": "new_rule",
+        "summary": "1C De poster som enligt punkterna 20"
+      },
+      {
+        "punkt": "20.4",
+        "type": "changed_rule",
+        "summary": "enligt reglerna i det allmänna rådet"
+      },
+      {
+        "punkt": "20.3",
+        "type": "changed_rule",
+        "summary": "3 Ett företag ska i ingångsbalansräkningen redovisa en finansiell anläggningstillgång eller avsättning som inte tidigare har redovisats och som skulle ha redovisats enligt detta allmänna råd"
+      },
+      {
+        "punkt": "20.4A",
+        "type": "new_rule",
+        "summary": "4A Ett företag ska i ingångsbalansräkningen omklassificera poster som enligt tidigare tillämpade redovisningsprinciper har redovisats som ett visst slag av tillgång, skuld eller post i eget kapital men som enligt detta allmänna råd utgör ett annat sl"
+      },
+      {
+        "punkt": "20.4B",
+        "type": "new_rule",
+        "summary": "4B De skillnadsbelopp som uppkommer vid korrigeringarna enligt punkterna 20"
+      },
+      {
+        "punkt": "20.2",
+        "type": "changed_rule",
+        "summary": "ska den egenupparbetade immateriella tillgången inte tas upp i ingångsbalansräkningen"
+      },
+      {
+        "punkt": "20.6",
+        "type": "changed_rule",
+        "summary": "6 Ett företag som har andra tillgångar, skulder eller avsättningar än sådana som anges i punkterna 20"
+      },
+      {
+        "punkt": "20.8",
+        "type": "changed_rule",
+        "summary": "8 Ett företag som det närmast föregående räkenskapsåret har tillämpat en uppställningsform för resultaträkningen eller balansräkningen som inte stämmer överens med uppställningsformerna i detta allmänna råd och som väljer att inte räkna om jämförelse"
+      },
+      {
+        "punkt": "3.10",
+        "type": "changed_rule",
+        "summary": "ska jämförelsetalen lämnas i en särskild kolumn till höger om beloppsuppgifterna för räkenskapsåret"
+      },
+      {
+        "punkt": "20.10A",
+        "type": "new_rule",
+        "summary": "10A Ett företag som lämnar årsredovisningen, eller i förekommande fall årsbokslutet, för det närmast föregående räkenskapsåret som bilaga enligt punkt 20"
+      },
+      {
+        "punkt": "20.10",
+        "type": "changed_rule",
+        "summary": "5 § fjärde stycket ÅRL"
+      },
+      {
+        "punkt": "20.12",
+        "type": "changed_rule",
+        "summary": "20.12 Har upphävts. (BFNAR 2024:4)"
+      },
+      {
+        "punkt": "20.13",
+        "type": "changed_rule",
+        "summary": "13 Ett handelsbolag ska ange förändringar i ingående eget kapital till följd av korrigeringar enligt punkterna 20"
+      },
+      {
+        "punkt": "20.14",
+        "type": "changed_rule",
+        "summary": "20.14 Har upphävts. (BFNAR 2024:4)"
+      },
+      {
+        "punkt": "20.15",
+        "type": "changed_rule",
+        "summary": "20.15 Har upphävts. (BFNAR 2024:4)"
+      },
+      {
+        "punkt": "20.16",
+        "type": "changed_rule",
+        "summary": "20.16 Har upphävts. (BFNAR 2024:4)"
+      },
+      {
+        "punkt": "20.17",
+        "type": "changed_rule",
+        "summary": "17 En filial ska ange förändringar i ingående eget kapital till följd av korrigeringar enligt punkterna 20"
+      }
+    ]
+  },
+  {
+    "regulation": "K2",
+    "dir": "k2-arsredovisning",
+    "file": "21-kassaflödesanalys.md",
+    "facts": [
+      {
+        "punkt": "21.5",
+        "type": "belopp",
+        "tid": "tre månader",
+        "summary": "21"
+      },
+      {
+        "punkt": "21.1",
+        "type": "changed_rule",
+        "summary": "1 Detta kapitel ska tillämpas när en kassaflödesanalys upprättas"
+      }
+    ]
+  },
+  {
+    "regulation": "K3",
+    "dir": "k3-arsredovisning",
+    "file": "01-tillämpning.md",
+    "facts": [
+      {
+        "punkt": "1.1",
+        "type": "changed_rule",
+        "summary": "**Företag** är en fysisk eller juridisk person som är bokföringsskyldig enligt bokföringslagen (1999:1078)"
+      },
+      {
+        "punkt": "3.2",
+        "type": "changed_rule",
+        "summary": "är en finansiell rapport en koncernredovisning eller en årsredovisning"
+      },
+      {
+        "punkt": "1.5",
+        "type": "changed_rule",
+        "summary": "Att söka vägledning i IASB:s normgivning torde därför bli aktuellt endast undantagsvis"
+      }
+    ]
+  },
+  {
+    "regulation": "K3",
+    "dir": "k3-arsredovisning",
+    "file": "03-utformning.md",
+    "facts": [
+      {
+        "punkt": "3.1",
+        "type": "changed_rule",
+        "summary": "Detta kapitel ska tillämpas när de **finansiella rapporterna** utformas och när en förvaltningsberättelse upprättas"
+      },
+      {
+        "punkt": "3.5A",
+        "type": "new_rule",
+        "summary": "Ett **företag** ska lämna jämförande information i förvaltningsberättelsen när det behövs för att förstå den **finansiella rapporten**"
+      }
+    ]
+  },
+  {
+    "regulation": "K3",
+    "dir": "k3-arsredovisning",
+    "file": "04-balansräkning.md",
+    "facts": [
+      {
+        "punkt": "4.1",
+        "type": "changed_rule",
+        "summary": "Detta kapitel ska tillämpas när balansräkningen i en **finansiell rapport** upprättas"
+      },
+      {
+        "punkt": "4.2",
+        "type": "changed_rule",
+        "summary": "mäklar- eller advokatföretag, som tar emot medel för annans räkning med redovisningsskyldighet och som håller dessa medel avskilda enligt lagen (1944:181) om redovisningsmedel, ska redovisa dessa i en egen post"
+      }
+    ]
+  },
+  {
+    "regulation": "K3",
+    "dir": "k3-arsredovisning",
+    "file": "05-resultaträkning.md",
+    "facts": [
+      {
+        "punkt": "5.1",
+        "type": "changed_rule",
+        "summary": "Detta kapitel ska tillämpas när resultaträkningen i en **finansiell rapport** upprättas"
+      }
+    ]
+  },
+  {
+    "regulation": "K3",
+    "dir": "k3-arsredovisning",
+    "file": "06-förändring-eget-kapital.md",
+    "facts": [
+      {
+        "punkt": "6.1",
+        "type": "changed_rule",
+        "summary": "Detta kapitel ska tillämpas när räkenskapsårets förändringar i **eget kapital** ska specificeras i den **finansiella rapporten**"
+      },
+      {
+        "punkt": "6.2",
+        "type": "changed_rule",
+        "summary": "Specifikationen enligt 6 kap"
+      }
+    ]
+  },
+  {
+    "regulation": "K3",
+    "dir": "k3-arsredovisning",
+    "file": "07-kassaflödesanalys.md",
+    "facts": [
+      {
+        "punkt": "7.4",
+        "type": "belopp",
+        "tid": "tre månader",
+        "summary": "**Likvida medel** är"
+      },
+      {
+        "punkt": "7.1",
+        "type": "changed_rule",
+        "summary": "Detta kapitel ska tillämpas när en **kassaflödesanalys** upprättas"
+      },
+      {
+        "punkt": "7.2",
+        "type": "changed_rule",
+        "summary": "En **kassaflödesanalys** innehåller uppgifter om räkenskapsårets förändringar av **företagets likvida medel**"
+      },
+      {
+        "punkt": "7.5",
+        "type": "changed_rule",
+        "summary": "**Löpande verksamhet** utgörs av företagets huvudsakliga intäktsgenererande verksamheter samt av andra verksamheter än **investeringsverksamhet** och **finansieringsverksamhet**"
+      }
+    ]
+  },
+  {
+    "regulation": "K3",
+    "dir": "k3-arsredovisning",
+    "file": "08-noter.md",
+    "facts": [
+      {
+        "punkt": "8.1",
+        "type": "changed_rule",
+        "summary": "Detta kapitel ska tillämpas på noter som ska lämnas i en finansiell **rapport**"
+      }
+    ]
+  },
+  {
+    "regulation": "K3",
+    "dir": "k3-arsredovisning",
+    "file": "09-koncernredovisning.md",
+    "facts": [
+      {
+        "punkt": "9.1",
+        "type": "changed_rule",
+        "summary": "Detta kapitel ska tillämpas när ett moderföretag redovisar andelar i dotterföretag"
+      }
+    ]
+  },
+  {
+    "regulation": "K3",
+    "dir": "k3-arsredovisning",
+    "file": "10-byte-princip.md",
+    "facts": [
+      {
+        "punkt": "10.1",
+        "type": "changed_rule",
+        "summary": "Detta kapitel ska tillämpas vid byte av **redovisningsprincip**, **ändrad uppskattning och bedömning** samt rättelse av **fel** i tidigare **finansiella rapporter**"
+      },
+      {
+        "punkt": "10.12",
+        "type": "changed_rule",
+        "summary": "Ett **företag** ska rätta ett väsentligt **fel** i den **finansiella rapport** som upprättas närmast efter upptäckten av felet"
+      },
+      {
+        "punkt": "6.3",
+        "type": "changed_rule",
+        "summary": "ska specifikationen av förändringar i eget kapital innehålla uppgift om effekten av rättelse av fel"
+      }
+    ]
+  },
+  {
+    "regulation": "K3",
+    "dir": "k3-arsredovisning",
+    "file": "11-finansiella-instrument-anskaffning.md",
+    "facts": [
+      {
+        "punkt": "11.15",
+        "type": "belopp",
+        "tid": "ett år",
+        "summary": "Ett **finansiellt instrument** som innehåller en finansieringskomponent och har en kredittid som överstiger ett år ska vid det första redovisningstillfället värderas till **nuvärdet** av alla framtida"
+      }
+    ]
+  },
+  {
+    "regulation": "K3",
+    "dir": "k3-arsredovisning",
+    "file": "12-finansiella-instrument-verkligt-värde.md",
+    "facts": [
+      {
+        "punkt": "12.1",
+        "type": "changed_rule",
+        "summary": "Detta kapitel ska tillämpas vid redovisning av **finansiella instrument** av **företag** som har valt att värdera instrumenten enligt 4 kap"
+      }
+    ]
+  },
+  {
+    "regulation": "K3",
+    "dir": "k3-arsredovisning",
+    "file": "14-intresseföretag.md",
+    "facts": [
+      {
+        "punkt": "14.1",
+        "type": "changed_rule",
+        "summary": "Detta kapitel ska tillämpas när ett ägarföretag redovisar andelar i intresseföretag"
+      },
+      {
+        "punkt": "14.2",
+        "type": "changed_rule",
+        "summary": "Förvärvas ytterligare andelar i ett företag som såväl före som efter förvärvet är intresseföretag, ska de andelar som ägdes före förvärvet inte värderas om"
+      }
+    ]
+  },
+  {
+    "regulation": "K3",
+    "dir": "k3-arsredovisning",
+    "file": "15-joint-venture.md",
+    "facts": [
+      {
+        "punkt": "15.1",
+        "type": "changed_rule",
+        "summary": "Detta kapitel ska tillämpas vid **samägarens** redovisning av **joint venture**"
+      }
+    ]
+  },
+  {
+    "regulation": "K3",
+    "dir": "k3-arsredovisning",
+    "file": "17-materiella-anläggningstillgångar.md",
+    "facts": [
+      {
+        "punkt": "17.24",
+        "type": "belopp",
+        "tid": "tre år",
+        "summary": "I juridisk person får utgifter för en **materiell anläggningstillgång** som är av mindre värde eller kan antas ha en ekonomisk livslängd på högst tre år redovisas som **kostnad** vid det första redovi"
+      }
+    ]
+  },
+  {
+    "regulation": "K3",
+    "dir": "k3-arsredovisning",
+    "file": "18-immateriella-tillgångar.md",
+    "facts": [
+      {
+        "punkt": "18.18",
+        "type": "belopp",
+        "tid": "fem år",
+        "summary": "**Nyttjandeperioden** för en immateriell anläggningstillgång som uppkommit till följd av avtalsenliga eller andra juridiska rättigheter får inte överstiga den period som omfattas av avtalet eller de j"
+      }
+    ]
+  },
+  {
+    "regulation": "K3",
+    "dir": "k3-arsredovisning",
+    "file": "19-rörelseförvärv-goodwill.md",
+    "facts": [
+      {
+        "punkt": "19.14",
+        "type": "belopp",
+        "tid": "fem år",
+        "summary": "**Avskrivningar** på **goodwill** ska göras på det sätt som anges i punkterna 18"
+      },
+      {
+        "punkt": "19.1",
+        "type": "changed_rule",
+        "summary": "Detta kapitel ska tillämpas vid redovisning av rörelseförvärv med undantag av"
+      },
+      {
+        "punkt": "19.14",
+        "type": "changed_rule",
+        "summary": "ska avskrivningar på goodwill göras enligt punkterna 18"
+      },
+      {
+        "punkt": "21.9",
+        "type": "changed_rule",
+        "summary": "En förändring av avsättningen på grund av diskonteringseffekter redovisas därmed som räntekostnad"
+      }
+    ]
+  },
+  {
+    "regulation": "K3",
+    "dir": "k3-arsredovisning",
+    "file": "20-leasingavtal.md",
+    "facts": [
+      {
+        "punkt": "20.14",
+        "type": "belopp",
+        "tid": "ett år, fem år",
+        "summary": "En leasetagare som är ett större **företag** ska lämna följande upplysningar om **operationella leasingavtal**:"
+      },
+      {
+        "punkt": "20.25",
+        "type": "belopp",
+        "tid": "ett år, fem år",
+        "summary": "En leasegivare som är ett större **företag** ska lämna följande upplysningar om **operationella leasingavtal**:"
+      },
+      {
+        "punkt": "20.1",
+        "type": "changed_rule",
+        "summary": "Detta kapitel ska tillämpas vid redovisning av samtliga **leasingavtal** med undantag av"
+      }
+    ]
+  },
+  {
+    "regulation": "K3",
+    "dir": "k3-arsredovisning",
+    "file": "21-avsättningar.md",
+    "facts": [
+      {
+        "punkt": "21.9",
+        "type": "belopp",
+        "belopp": "400 000 kronor",
+        "tid": "sex månader",
+        "summary": "Avsättningen ska redovisas till **nuvärdet** av de framtida betalningar som krävs för att reglera förpliktelsen, om effekten av när i tiden betalningen sker är väsentlig"
+      },
+      {
+        "punkt": "21.1",
+        "type": "changed_rule",
+        "summary": "Detta kapitel ska tillämpas på **avsättningar, eventualförpliktelser** och **eventualtillgångar** med undantag av avsättningar i samband med"
+      },
+      {
+        "punkt": "21.2",
+        "type": "changed_rule",
+        "summary": "Med **kontrakt som verkställs längre fram** avses kontrakt där inte någon av parterna har uppfyllt någon av sina förpliktelser, eller där båda parterna endast delvis, men i lika utsträckning, har uppfyllt sina förpliktelser"
+      },
+      {
+        "punkt": "21.16",
+        "type": "changed_rule",
+        "summary": "Ett större **företag** ska för varje slag av **avsättning** specificera"
+      }
+    ]
+  },
+  {
+    "regulation": "K3",
+    "dir": "k3-arsredovisning",
+    "file": "23-intäkter.md",
+    "facts": [
+      {
+        "punkt": "23.1",
+        "type": "changed_rule",
+        "summary": "Detta kapitel ska tillämpas vid redovisning av **intäkter** från följande typer av transaktioner och händelser:"
+      },
+      {
+        "punkt": "23.8",
+        "type": "changed_rule",
+        "summary": "Ett **företag** ska redovisa en **intäkt** från försäljning av varor när kriterierna i punkt 2"
+      }
+    ]
+  },
+  {
+    "regulation": "K3",
+    "dir": "k3-arsredovisning",
+    "file": "24-offentliga-bidrag.md",
+    "facts": [
+      {
+        "punkt": "24.1",
+        "type": "changed_rule",
+        "summary": "Detta kapitel ska tillämpas vid redovisning av och upplysningar om erhållna **offentliga bidrag**"
+      }
+    ]
+  },
+  {
+    "regulation": "K3",
+    "dir": "k3-arsredovisning",
+    "file": "26-aktierelaterade-ersättningar.md",
+    "facts": [
+      {
+        "punkt": "26.1",
+        "type": "changed_rule",
+        "summary": "Detta kapitel ska tillämpas vid redovisning av **aktierelaterade ersättningar** med undantag av ersättning för nettotillgångar som förvärvats i samband med ett **rörelseförvärv**"
+      },
+      {
+        "punkt": "26.3",
+        "type": "changed_rule",
+        "summary": "**Aktierelaterade ersättningar som regleras med egetkapitalinstrument** är ersättningar genom vilka **företaget** eller ett annat företag i samma koncern förvärvar varor eller tjänster som ersättning för företagets **egetkapitalinstrument**"
+      },
+      {
+        "punkt": "26.4",
+        "type": "changed_rule",
+        "summary": "**Aktierelaterade ersättningar som regleras med kontanter** är ersättningar genom vilka **företaget** eller ett annat företag i samma koncern förvärvar varor och tjänster genom att företaget eller ett annat företag i koncernen ådrar sig **skulder** t"
+      },
+      {
+        "punkt": "26.5",
+        "type": "changed_rule",
+        "summary": "Ett **företag** ska redovisa varor och tjänster som förvärvas mot ersättning i form av **aktierelaterade ersättningar** när varorna eller tjänsterna erhålls"
+      }
+    ]
+  },
+  {
+    "regulation": "K3",
+    "dir": "k3-arsredovisning",
+    "file": "27-nedskrivningar.md",
+    "facts": [
+      {
+        "punkt": "27.1",
+        "type": "changed_rule",
+        "summary": "Detta kapitel ska tillämpas vid nedskrivningar av anläggningstillgångar med undantag av"
+      }
+    ]
+  },
+  {
+    "regulation": "K3",
+    "dir": "k3-arsredovisning",
+    "file": "32-händelser-efter-balansdagen.md",
+    "facts": [
+      {
+        "punkt": "32.3",
+        "type": "belopp",
+        "tid": "fyra månader",
+        "summary": "Händelser som bekräftar förhållanden som förelåg på **balansdagen** men som inträffat efter balansdagen och innan den **finansiella rapporten** är upprättad ska beaktas genom att justera beloppen elle"
+      }
+    ]
+  },
+  {
+    "regulation": "K3",
+    "dir": "k3-arsredovisning",
+    "file": "36-stiftelser.md",
+    "facts": [
+      {
+        "punkt": "36.1",
+        "type": "changed_rule",
+        "summary": "Detta kapitel ska tillämpas av **företag** som är stiftelser eller som drivs under stiftelseliknande former"
+      },
+      {
+        "punkt": "36.4",
+        "type": "changed_rule",
+        "summary": "Räkenskapsårets **kassaflöden** får, utöver vad som anges i punkt 7"
+      }
+    ]
+  },
+  {
+    "regulation": "K3",
+    "dir": "k3-arsredovisning",
+    "file": "37-ideella-föreningar.md",
+    "facts": [
+      {
+        "punkt": "37.1",
+        "type": "changed_rule",
+        "summary": "Detta kapitel ska tillämpas av **företag** som är ideella föreningar, registrerade trossamfund och liknande sammanslutningar"
+      }
+    ]
+  },
+  {
+    "regulation": "K3",
+    "dir": "k3-arsredovisning",
+    "file": "38-bostadsrättsföreningar.md",
+    "facts": [
+      {
+        "punkt": "38.1",
+        "type": "changed_rule",
+        "summary": "Detta kapitel ska tillämpas av **företag** som är bostadsrättsföreningar"
+      },
+      {
+        "punkt": "38.2",
+        "type": "changed_rule",
+        "summary": "I en bostadsrättsförening avses med sådana förhållanden som är viktiga för bedömningen av utvecklingen av **företagets** verksamhet, ställning och resultat enligt 6 kap"
+      },
+      {
+        "punkt": "3.7",
+        "type": "changed_rule",
+        "summary": "d ska det i förvaltningsberättelsen även lämnas upplysning om speciella omständigheter som i särskild grad berör föreningen"
+      },
+      {
+        "punkt": "38.4",
+        "type": "changed_rule",
+        "summary": "Om ett nyckeltal enligt 6 kap"
+      },
+      {
+        "punkt": "38.11",
+        "type": "changed_rule",
+        "summary": "anges hur de olika nyckeltalen ska beräknas"
+      },
+      {
+        "punkt": "38.7",
+        "type": "changed_rule",
+        "summary": "Nyckeltalet skuldsättning per kvadratmeter enligt 6 kap"
+      },
+      {
+        "punkt": "38.8",
+        "type": "changed_rule",
+        "summary": "Nyckeltalet sparande per kvadratmeter enligt 6 kap"
+      },
+      {
+        "punkt": "38.9",
+        "type": "changed_rule",
+        "summary": "Nyckeltalet räntekänslighet enligt 6 kap"
+      },
+      {
+        "punkt": "38.10",
+        "type": "changed_rule",
+        "summary": "Nyckeltalet energikostnad per kvadratmeter enligt 6 kap"
+      },
+      {
+        "punkt": "38.12",
+        "type": "changed_rule",
+        "summary": "I upplysningen enligt 6 kap"
+      },
+      {
+        "punkt": "38.13",
+        "type": "changed_rule",
+        "summary": "När bostadsrättsföreningens byggnader delas upp på betydande komponenter enligt punkt 17"
+      },
+      {
+        "punkt": "17.4",
+        "type": "changed_rule",
+        "summary": "ska en materiell anläggningstillgång med betydande komponenter delas upp på dessa om skillnaden i förbrukningen mellan komponenterna förväntas vara väsentlig"
+      },
+      {
+        "punkt": "38.15",
+        "type": "changed_rule",
+        "summary": "Reservering av medel för framtida fastighetsunderhåll i enlighet med 9 kap"
+      },
+      {
+        "punkt": "38.16",
+        "type": "changed_rule",
+        "summary": "I kassaflödesanalysen får föreningens andel av medel på ett klientmedelskonto hos föreningens ekonomiska förvaltare anses som **likvida medel**"
+      },
+      {
+        "punkt": "38.17",
+        "type": "changed_rule",
+        "summary": "Upplysning ska lämnas om vad som ingår i posten Nettoomsättning i resultaträkningen"
+      },
+      {
+        "punkt": "1.3",
+        "type": "changed_rule",
+        "summary": "i den nya lydelsen får tillämpas av ett mindre företag som har en annan associationsform än aktiebolag eller ekonomisk förening, första gången för det räkenskapsår som inleds närmast efter den 31 december 2016"
+      },
+      {
+        "punkt": "26.2",
+        "type": "changed_rule",
+        "summary": "3 i deras nya lydelse behöver inte tillämpas på aktierelaterade ersättningar som regleras med egetkapitalinstrument och som tilldelats från ett annat företag i koncernen före den tidpunkt då de nya reglerna ska tillämpas första gången"
+      }
+    ]
+  },
+  {
+    "regulation": "Årsbokslut",
+    "dir": "arsbokslut",
+    "file": "01-tillämpning.md",
+    "facts": [
+      {
+        "punkt": "1.1",
+        "type": "changed_rule",
+        "summary": "Detta allmänna råd ska tillämpas av företag som avslutar den löpande bokföringen med ett årsbokslut enligt 6 kap"
+      }
+    ]
+  },
+  {
+    "regulation": "Årsbokslut",
+    "dir": "arsbokslut",
+    "file": "02-grundläggande-principer.md",
+    "facts": [
+      {
+        "punkt": "2.4",
+        "type": "belopp",
+        "belopp": "5 000 kronor",
+        "summary": "Ett företag behöver inte periodisera inkomster och utgifter som var för sig understiger 5 000 kronor, trots det som anges i 2 kap"
+      }
+    ]
+  },
+  {
+    "regulation": "Årsbokslut",
+    "dir": "arsbokslut",
+    "file": "04-uppställningsformer-del1.md",
+    "facts": [
+      {
+        "punkt": "4.1",
+        "type": "changed_rule",
+        "summary": "Detta kapitel ska tillämpas när resultaträkningen och balansräkningen upprättas"
+      },
+      {
+        "punkt": "4.2",
+        "type": "changed_rule",
+        "summary": "I resultaträkningen ska poster som avser intäkter redovisas utan mervärdesskatt"
+      }
+    ]
+  },
+  {
+    "regulation": "Årsbokslut",
+    "dir": "arsbokslut",
+    "file": "04-uppställningsformer-del2.md",
+    "facts": [
+      {
+        "punkt": "4.5",
+        "type": "changed_rule",
+        "summary": "I balansräkningen ska tillgångar och skulder värderade i utländsk valuta redovisas inklusive valutakursdifferens"
+      },
+      {
+        "punkt": "4.11",
+        "type": "changed_rule",
+        "summary": "Eget kapital i en ideell förening ska i balansräkningen bestå av posterna:"
+      },
+      {
+        "punkt": "4.12",
+        "type": "changed_rule",
+        "summary": "En samfällighetsförening ska inte redovisa posterna Bokslutsdispositioner, Obeskattade reserver och Skatt på årets resultat i uppställningsformerna för resultat- och balansräkningen"
+      },
+      {
+        "punkt": "4.15",
+        "type": "changed_rule",
+        "summary": "En stiftelse ska inte redovisa posterna Bokslutsdispositioner och Obeskattade reserver i uppställningsformerna för resultat- och balansräkningen"
+      },
+      {
+        "punkt": "4.17",
+        "type": "changed_rule",
+        "summary": "Utdelning i en stiftelse som inte är en avkastningsstiftelse ska redovisas som kostnad i resultaträkningen"
+      },
+      {
+        "punkt": "4.19",
+        "type": "changed_rule",
+        "summary": "Bundet eget kapital i en stiftelse ska i balansräkningen bestå av posterna:"
+      },
+      {
+        "punkt": "4.20",
+        "type": "changed_rule",
+        "summary": "Fritt eget kapital i en stiftelse ska i balansräkningen bestå av posterna:"
+      },
+      {
+        "punkt": "4.21",
+        "type": "changed_rule",
+        "summary": "En stiftelse som är skyldig att betala skatt ska redovisa Skatt på årets resultat i resultaträkningen och Skatteskulder i balansräkningen"
+      }
+    ]
+  },
+  {
+    "regulation": "Årsbokslut",
+    "dir": "arsbokslut",
+    "file": "05-rörelseintäkter-del1.md",
+    "facts": [
+      {
+        "punkt": "5.1",
+        "type": "changed_rule",
+        "summary": "Detta kapitel ska tillämpas vid redovisning av rörelseintäkter"
+      }
+    ]
+  },
+  {
+    "regulation": "Årsbokslut",
+    "dir": "arsbokslut",
+    "file": "09-anläggningstillgångar.md",
+    "facts": [
+      {
+        "punkt": "9.6",
+        "type": "belopp",
+        "tid": "tre år",
+        "summary": "Utgifter för inventarier som kan antas ha en nyttjandeperiod på högst tre år ska redovisas som kostnad"
+      },
+      {
+        "punkt": "9.27",
+        "type": "belopp",
+        "tid": "fem år",
+        "summary": "Nyttjandeperioden för maskiner, inventarier och andra materiella anläggningstillgångar som inte är byggnader eller mark får bestämmas till fem år (förenklingsregel)"
+      },
+      {
+        "punkt": "9.28",
+        "type": "belopp",
+        "tid": "fem år",
+        "summary": "Nyttjandeperioden för en immateriell anläggningstillgång ska bestämmas till fem år"
+      },
+      {
+        "punkt": "9.32",
+        "type": "belopp",
+        "belopp": "25 000 kronor",
+        "summary": "Nedskrivning behöver inte göras om värdenedgången understiger det lägsta av 25 000 kronor och 10 procent av det egna kapitalet"
+      }
+    ]
+  },
+  {
+    "regulation": "Årsbokslut",
+    "dir": "arsbokslut",
+    "file": "10-finansiella-anläggningstillgångar.md",
+    "facts": [
+      {
+        "punkt": "10.19",
+        "type": "belopp",
+        "belopp": "25 000 kronor",
+        "summary": "Nedskrivning behöver inte göras om värdenedgången understiger det lägsta av 25 000 kronor och 10 procent av det egna kapitalet vid årets ingång"
+      },
+      {
+        "punkt": "10.22",
+        "type": "belopp",
+        "belopp": "25 000 kronor",
+        "summary": "Nedskrivning ska dock alltid göras om det sammanlagda värdet på företagets finansiella anläggningstillgångar på balansdagen understiger deras sammanlagda redovisade värde med mer än det lägsta av 25 0"
+      }
+    ]
+  },
+  {
+    "regulation": "Årsbokslut",
+    "dir": "arsbokslut",
+    "file": "14-eget-kapital.md",
+    "facts": [
+      {
+        "punkt": "14.1",
+        "type": "changed_rule",
+        "summary": "Detta kapitel ska tillämpas vid redovisning av eget kapital och obeskattade reserver"
+      },
+      {
+        "punkt": "14.2",
+        "type": "changed_rule",
+        "summary": "Eget kapital utgör skillnaden mellan tillgångar och skulder inklusive avsättningar"
+      },
+      {
+        "punkt": "14.14",
+        "type": "changed_rule",
+        "summary": "Reservering till och ianspråktagande av underhålls- och förnyelsefond ska redovisas som en omföring inom eget kapital"
+      },
+      {
+        "punkt": "14.16B",
+        "type": "new_rule",
+        "summary": "En samfällighetsförening ska i en upplysning specificera förändringar i eget kapital jämfört med föregående års balansräkning"
+      },
+      {
+        "punkt": "14.17",
+        "type": "changed_rule",
+        "summary": "Eget kapital i en stiftelse ska delas in i bundet eget kapital och fritt eget kapital"
+      },
+      {
+        "punkt": "14.18",
+        "type": "changed_rule",
+        "summary": "Som bundet eget kapital ska redovisas sådant kapital som inte får förbrukas för stiftelseändamålet"
+      }
+    ]
+  },
+  {
+    "regulation": "Årsbokslut",
+    "dir": "arsbokslut",
+    "file": "15-avsättningar.md",
+    "facts": [
+      {
+        "punkt": "15.20",
+        "type": "belopp",
+        "belopp": "25 000 kronor",
+        "summary": "En enskild näringsidkare behöver inte redovisa åtaganden som avsättningar om summan av dessa kan antas understiga 25 000 kronor"
+      },
+      {
+        "punkt": "15.21",
+        "type": "belopp",
+        "belopp": "25 000 kronor",
+        "summary": "Ett handelsbolag behöver inte redovisa åtaganden som avsättningar om summan av dessa kan antas understiga 25 000 kronor"
+      }
+    ]
+  },
+  {
+    "regulation": "Årsbokslut",
+    "dir": "arsbokslut",
+    "file": "17-upplysningar.md",
+    "facts": [
+      {
+        "punkt": "17.1",
+        "type": "changed_rule",
+        "summary": "Detta kapitel ska tillämpas på upplysningar som ska lämnas i årsbokslutet"
+      },
+      {
+        "punkt": "17.2",
+        "type": "changed_rule",
+        "summary": "De upplysningar om värderingsprinciper som ett företag ska lämna enligt 6 kap"
+      },
+      {
+        "punkt": "17.16",
+        "type": "changed_rule",
+        "summary": "En samfällighetsförening ska i en upplysning specificera förändringar i eget kapital jämfört med föregående års balansräkning"
+      },
+      {
+        "punkt": "17.17",
+        "type": "changed_rule",
+        "summary": "En stiftelse som redovisar utdelning enligt punkt 4"
+      }
+    ]
+  },
+  {
+    "regulation": "Årsbokslut",
+    "dir": "arsbokslut",
+    "file": "18-moderföretag.md",
+    "facts": [
+      {
+        "punkt": "18.2",
+        "type": "belopp",
+        "tid": "ett år",
+        "summary": "Andelar i koncernföretag och gemensamt styrda företag är normalt anläggningstillgångar"
+      },
+      {
+        "punkt": "18.9",
+        "type": "belopp",
+        "belopp": "25 000 kronor",
+        "summary": "Är värdet på andelar i ett koncernföretag eller ett gemensamt styrt företag som är anläggningstillgång noll kronor på balansdagen ska tillgången alltid skrivas ned till noll kronor"
+      },
+      {
+        "punkt": "18.19",
+        "type": "belopp",
+        "belopp": "25 000 kronor",
+        "summary": "Är värdet på andelar i ett koncernföretag eller ett gemensamt styrt företag som är anläggningstillgång i en enskild näringsverksamhet noll kronor på balansdagen ska tillgången alltid skrivas ned till "
+      },
+      {
+        "punkt": "18.20",
+        "type": "belopp",
+        "belopp": "25 000 kronor",
+        "summary": "Är värdet på andelar i ett koncernföretag eller ett gemensamt styrt företag som är anläggningstillgång i ett handelsbolag noll kronor på balansdagen ska tillgången alltid skrivas ned till noll kronor"
+      }
+    ]
+  },
+  {
+    "regulation": "Årsbokslut",
+    "dir": "arsbokslut",
+    "file": "19-första-gången.md",
+    "facts": [
+      {
+        "punkt": "19.1",
+        "type": "changed_rule",
+        "summary": "Detta kapitel behandlar vad som särskilt gäller första gången ett företag som tillämpat annan normgivning upprättar årsbokslut enligt detta allmänna råd"
+      },
+      {
+        "punkt": "19.2",
+        "type": "changed_rule",
+        "summary": "Ett företag, som i den utgående balansen för det närmast föregående räkenskapsåret har en tillgång, skuld eller avsättning enligt nedan, ska redovisa följande korrigeringar mot ingående eget kapital"
+      },
+      {
+        "punkt": "19.3",
+        "type": "changed_rule",
+        "summary": "Ett företag, som i den utgående balansen för det närmast föregående räkenskapsåret inte har redovisat en tillgång, skuld eller avsättning som skulle ha redovisats enligt detta allmänna råd, ska redovisa följande korrigering mot ingående eget kapital"
+      },
+      {
+        "punkt": "19.8",
+        "type": "changed_rule",
+        "summary": "Ett företag ska upplysa om att det allmänna rådet tillämpas första gången"
+      },
+      {
+        "punkt": "19.10B",
+        "type": "new_rule",
+        "summary": "En samfällighetsförening ska i upplysningen enligt punkt 17"
+      },
+      {
+        "punkt": "19.11",
+        "type": "changed_rule",
+        "summary": "En stiftelse ska i upplysningen enligt punkt 17"
+      }
+    ]
+  },
+  {
+    "regulation": "Bokföring",
+    "dir": "bokforing",
+    "file": "02-löpande-bokföring.md",
+    "facts": [
+      {
+        "punkt": "2.1",
+        "type": "changed_rule",
+        "summary": "Det som är bokfört ska inte kunna raderas eller på annat sätt göras oläsligt"
+      }
+    ]
+  },
+  {
+    "regulation": "Bokföring",
+    "dir": "bokforing",
+    "file": "03-tidpunkt-bokföring.md",
+    "facts": [
+      {
+        "punkt": "3.11",
+        "type": "belopp",
+        "tid": "ett år",
+        "summary": "Bokföringen av kontanta in- och utbetalningar så att de kan presenteras i registreringsordning får senareläggas till högst fyra veckor efter den dag då affärshändelsen inträffade om"
+      }
+    ]
+  },
+  {
+    "regulation": "Bokföring",
+    "dir": "bokforing",
+    "file": "07-räkenskapsinformation.md",
+    "facts": [
+      {
+        "punkt": "7.1",
+        "type": "changed_rule",
+        "summary": "Är räkenskapsinformation sparad med teknik som företaget inte längre använder accepteras en viss fördröjning vid utskrift till en pappershandling enligt 7 kap"
+      },
+      {
+        "punkt": "7.2",
+        "type": "changed_rule",
+        "summary": "Har upphävts. (BFNAR 2024:1)"
+      },
+      {
+        "punkt": "7.3",
+        "type": "changed_rule",
+        "summary": "Räkenskapsinformation som företaget hämtar via någon annans webbplats eller liknande får sparas i det elektroniska format i vilket räkenskapsinformationen är avsedd att presenteras i företaget"
+      },
+      {
+        "punkt": "7.4",
+        "type": "changed_rule",
+        "summary": "Räkenskapsinformation som företaget tar emot både i elektronisk form och i pappersform i nära anslutning till varandra får sparas i den form i vilken räkenskapsinformationen är avsedd att presenteras i företaget"
+      },
+      {
+        "punkt": "7.6",
+        "type": "changed_rule",
+        "summary": "Har upphävts. (BFNAR 2024:1)"
+      }
+    ]
+  },
+  {
+    "regulation": "Bokföring",
+    "dir": "bokforing",
+    "file": "08-arkivering.md",
+    "facts": [
+      {
+        "punkt": "8.7",
+        "type": "belopp",
+        "tid": "tre månader",
+        "summary": "Pappershandlingen får återföras till Sverige senare än vad som anges i punkt 8"
+      },
+      {
+        "punkt": "8.1",
+        "type": "changed_rule",
+        "summary": "För att arkivering ska anses ske på betryggande sätt enligt 7 kap"
+      },
+      {
+        "punkt": "8.3",
+        "type": "changed_rule",
+        "summary": "Ett företag ska upprätta en arkivplan om det behövs för att kunna överblicka den arkiverade räkenskapsinformationen"
+      },
+      {
+        "punkt": "8.5A",
+        "type": "new_rule",
+        "summary": "Om ett företag förvarar en pappershandling med räkenskapsinformation utomlands och överför räkenskapsinformationen med stöd av 7 kap"
+      },
+      {
+        "punkt": "8.6",
+        "type": "changed_rule",
+        "summary": "En pappershandling som innefattar en verifikation och som behövs för hantering eller bearbetning i utlandet ska återföras till Sverige så snart handlingen har tjänat sitt syfte utomlands"
+      },
+      {
+        "punkt": "8.7",
+        "type": "changed_rule",
+        "summary": "Pappershandlingen får återföras till Sverige senare än vad som anges i punkt 8"
+      },
+      {
+        "punkt": "8.8",
+        "type": "changed_rule",
+        "summary": "Ett företag som senarelagt bokföringen enligt någon av punkterna 3"
+      },
+      {
+        "punkt": "8.9",
+        "type": "changed_rule",
+        "summary": "Särskilda skäl enligt 7 kap"
+      },
+      {
+        "punkt": "8.10",
+        "type": "changed_rule",
+        "summary": "När en pappershandling förs ut ur landet med stöd av punkt 8"
+      },
+      {
+        "punkt": "8.11",
+        "type": "changed_rule",
+        "summary": "En pappershandling som förts ut ur landet med stöd av punkt 8"
+      },
+      {
+        "punkt": "8.12",
+        "type": "changed_rule",
+        "summary": "Företag som avses i 6 kap"
+      }
+    ]
+  },
+  {
+    "regulation": "Bokföring",
+    "dir": "bokforing",
+    "file": "09-systemdokumentation.md",
+    "facts": [
+      {
+        "punkt": "9.1",
+        "type": "changed_rule",
+        "summary": "Bokföringssystem är system eller delar av system där bokföringsposter och räkenskapsinformation skapas eller bearbetas"
+      }
+    ]
+  },
+  {
+    "regulation": "Fusioner",
+    "dir": "fusioner",
+    "file": "02-redovisning-fusion.md",
+    "facts": [
+      {
+        "punkt": "2.10",
+        "type": "belopp",
+        "belopp": "100 000 kronor, 80 000 kronor",
+        "summary": "Vid fusion mellan ekonomiska föreningar ska övertagna tillgångar och skulder redovisas till de bokförda värden de hade i det överlåtande företaget"
+      }
+    ]
+  },
+  {
+    "regulation": "K1 Enskilda",
+    "dir": "k1-enskilda",
+    "file": "01-tillämpning.md",
+    "facts": [
+      {
+        "punkt": "1.2",
+        "type": "belopp",
+        "belopp": "5 000 kronor",
+        "summary": "1"
+      }
+    ]
+  },
+  {
+    "regulation": "K1 Enskilda",
+    "dir": "k1-enskilda",
+    "file": "02-definitioner.md",
+    "facts": [
+      {
+        "punkt": "2.1",
+        "type": "changed_rule",
+        "summary": "1 Företaget är den del av en fysisk persons aktiviteter som avser enskild näringsverksamhet"
+      }
+    ]
+  },
+  {
+    "regulation": "K1 Enskilda",
+    "dir": "k1-enskilda",
+    "file": "03-vad-bokföras.md",
+    "facts": [
+      {
+        "punkt": "3.7",
+        "type": "belopp",
+        "belopp": "5 000 kronor",
+        "summary": "3"
+      },
+      {
+        "punkt": "3.1",
+        "type": "changed_rule",
+        "summary": "1 En tillgång ska bokföras antingen i sin helhet eller inte alls i företaget"
+      }
+    ]
+  },
+  {
+    "regulation": "K1 Enskilda",
+    "dir": "k1-enskilda",
+    "file": "05-förenklade-årsbokslutet.md",
+    "facts": [
+      {
+        "punkt": "5.1",
+        "type": "belopp",
+        "tid": "sju år",
+        "summary": "5"
+      }
+    ]
+  },
+  {
+    "regulation": "K1 Enskilda",
+    "dir": "k1-enskilda",
+    "file": "06-balansräkningen.md",
+    "facts": [
+      {
+        "punkt": "6.17",
+        "type": "belopp",
+        "tid": "fem år",
+        "summary": "6"
+      },
+      {
+        "punkt": "6.30",
+        "type": "belopp",
+        "belopp": "3 500 kronor",
+        "summary": "6"
+      },
+      {
+        "punkt": "6.31",
+        "type": "belopp",
+        "tid": "tre år",
+        "summary": "6"
+      },
+      {
+        "punkt": "6.33",
+        "type": "belopp",
+        "belopp": "5 000 kronor, 20 000 kronor, 8 000 kronor, 28 000 kronor, 4 000 kronor",
+        "summary": "6"
+      },
+      {
+        "punkt": "6.34",
+        "type": "belopp",
+        "belopp": "5 000 kronor",
+        "summary": "6"
+      },
+      {
+        "punkt": "6.49",
+        "type": "belopp",
+        "belopp": "5 000 kronor",
+        "summary": "6"
+      },
+      {
+        "punkt": "6.50",
+        "type": "belopp",
+        "belopp": "5 000 kronor",
+        "summary": "6"
+      },
+      {
+        "punkt": "6.63",
+        "type": "belopp",
+        "belopp": "5 000 kronor",
+        "summary": "och 6"
+      },
+      {
+        "punkt": "6.59",
+        "type": "belopp",
+        "belopp": "5 000 kronor",
+        "summary": "6"
+      },
+      {
+        "punkt": "6.60",
+        "type": "belopp",
+        "belopp": "5 000 kronor",
+        "summary": "6"
+      },
+      {
+        "punkt": "6.72",
+        "type": "belopp",
+        "belopp": "5 000 kronor",
+        "tid": "tre månader, två månader",
+        "summary": "6"
+      },
+      {
+        "punkt": "6.73",
+        "type": "belopp",
+        "belopp": "5 000 kronor",
+        "summary": "6"
+      },
+      {
+        "punkt": "6.1",
+        "type": "changed_rule",
+        "summary": "1 En immateriell eller materiell anläggningstillgång som tas upp i balansräkningen ska förtecknas i en särskild förteckning"
+      },
+      {
+        "punkt": "6.31",
+        "type": "changed_rule",
+        "summary": "31 En maskin eller en inventarie som vid anskaffningen kan antas ha en ekonomisk livslängd på högst tre år behöver inte tas upp i balansräkningen utan får redovisas som kostnad i sin helhet samma år den förvärvas"
+      },
+      {
+        "punkt": "6.40",
+        "type": "changed_rule",
+        "summary": "Om avskrivningsunderlaget uppgår till högst ett halvt prisbasbelopp så får hela det bokförda beloppet skrivas av (se 18 kap"
+      },
+      {
+        "punkt": "6.48",
+        "type": "changed_rule",
+        "summary": "48 Värdet av eget och anställdas arbete ska inte tas med i anskaffningsvärdet"
+      }
+    ]
+  },
+  {
+    "regulation": "K1 Enskilda",
+    "dir": "k1-enskilda",
+    "file": "07-resultaträkningen.md",
+    "facts": [
+      {
+        "punkt": "7.2",
+        "type": "belopp",
+        "tid": "ett år, sex månader",
+        "summary": "7"
+      },
+      {
+        "punkt": "7.6",
+        "type": "belopp",
+        "belopp": "5 000 kronor",
+        "summary": "7"
+      },
+      {
+        "punkt": "7.1",
+        "type": "belopp",
+        "belopp": "5 000 kronor",
+        "summary": "angående motsvarande förhållande vad gäller kundfakturor som borde ha utställts)"
+      },
+      {
+        "punkt": "7.10",
+        "type": "belopp",
+        "tid": "ett år",
+        "summary": "7"
+      },
+      {
+        "punkt": "7.11",
+        "type": "belopp",
+        "belopp": "5 000 kronor",
+        "summary": "7"
+      }
+    ]
+  },
+  {
+    "regulation": "K1 Ideella",
+    "dir": "k1-ideella",
+    "file": "01-tillämpning.md",
+    "facts": [
+      {
+        "punkt": "1.1",
+        "type": "belopp",
+        "belopp": "5 000 kronor",
+        "summary": "och 1"
+      }
+    ]
+  },
+  {
+    "regulation": "K1 Ideella",
+    "dir": "k1-ideella",
+    "file": "02-definitioner.md",
+    "facts": [
+      {
+        "punkt": "2.1",
+        "type": "changed_rule",
+        "summary": "1 *Bidrag* är likvida medel som en förening får från en bidragsgivare som är ett offentligrättsligt organ"
+      }
+    ]
+  },
+  {
+    "regulation": "K1 Ideella",
+    "dir": "k1-ideella",
+    "file": "05-förenklade-årsbokslutet.md",
+    "facts": [
+      {
+        "punkt": "5.3",
+        "type": "belopp",
+        "tid": "sju år",
+        "summary": "5"
+      }
+    ]
+  },
+  {
+    "regulation": "K1 Ideella",
+    "dir": "k1-ideella",
+    "file": "06-balansräkningen.md",
+    "facts": [
+      {
+        "punkt": "6.3",
+        "type": "belopp",
+        "tid": "fem år",
+        "summary": "6"
+      },
+      {
+        "punkt": "6.27",
+        "type": "belopp",
+        "belopp": "42 000 kronor, 26 249 kronor, 23 624 kronor, 20 999 kronor, 3 500 kronor",
+        "summary": "6"
+      },
+      {
+        "punkt": "6.28",
+        "type": "belopp",
+        "tid": "tre år",
+        "summary": "6"
+      },
+      {
+        "punkt": "6.30",
+        "type": "belopp",
+        "belopp": "5 000 kronor, 20 000 kronor, 8 000 kronor, 28 000 kronor, 4 000 kronor",
+        "summary": "6"
+      },
+      {
+        "punkt": "6.31",
+        "type": "belopp",
+        "belopp": "5 000 kronor",
+        "summary": "6"
+      },
+      {
+        "punkt": "6.34",
+        "type": "belopp",
+        "tid": "fem år",
+        "summary": "6"
+      },
+      {
+        "punkt": "6.35",
+        "type": "belopp",
+        "tid": "fem år",
+        "summary": "6"
+      },
+      {
+        "punkt": "6.40",
+        "type": "belopp",
+        "belopp": "5 000 kronor",
+        "summary": "6"
+      },
+      {
+        "punkt": "6.51",
+        "type": "belopp",
+        "belopp": "5 000 kronor",
+        "summary": "6"
+      },
+      {
+        "punkt": "6.52",
+        "type": "belopp",
+        "belopp": "5 000 kronor",
+        "summary": "6"
+      },
+      {
+        "punkt": "6.54",
+        "type": "belopp",
+        "belopp": "5 000 kronor",
+        "summary": "6"
+      },
+      {
+        "punkt": "6.73",
+        "type": "belopp",
+        "belopp": "5 000 kronor",
+        "summary": "6"
+      },
+      {
+        "punkt": "6.74",
+        "type": "belopp",
+        "belopp": "5 000 kronor",
+        "summary": "6"
+      },
+      {
+        "punkt": "6.75",
+        "type": "belopp",
+        "belopp": "5 000 kronor",
+        "summary": "6"
+      },
+      {
+        "punkt": "6.78",
+        "type": "belopp",
+        "belopp": "5 000 kronor",
+        "tid": "tre månader, två månader",
+        "summary": "6"
+      },
+      {
+        "punkt": "6.1",
+        "type": "changed_rule",
+        "summary": "1 En immateriell eller materiell anläggningstillgång som tas upp i balansräkningen ska förtecknas i en särskild förteckning"
+      }
+    ]
+  },
+  {
+    "regulation": "K1 Ideella",
+    "dir": "k1-ideella",
+    "file": "07-resultaträkningen.md",
+    "facts": [
+      {
+        "punkt": "7.4",
+        "type": "belopp",
+        "tid": "sex månader",
+        "summary": "7"
+      },
+      {
+        "punkt": "7.5",
+        "type": "belopp",
+        "belopp": "5 000 kronor",
+        "summary": "7"
+      },
+      {
+        "punkt": "7.6",
+        "type": "belopp",
+        "belopp": "5 000 kronor",
+        "summary": "7"
+      },
+      {
+        "punkt": "7.9",
+        "type": "belopp",
+        "belopp": "5 000 kronor",
+        "summary": "7"
+      },
+      {
+        "punkt": "7.12",
+        "type": "belopp",
+        "belopp": "5 000 kronor",
+        "summary": "7"
+      },
+      {
+        "punkt": "7.13",
+        "type": "belopp",
+        "belopp": "5 000 kronor",
+        "summary": "7"
+      },
+      {
+        "punkt": "7.16",
+        "type": "belopp",
+        "belopp": "5 000 kronor",
+        "summary": "7"
+      }
+    ]
+  }
+]
