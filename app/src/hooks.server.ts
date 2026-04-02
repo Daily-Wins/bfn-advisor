@@ -3,6 +3,15 @@ import { sequence } from '@sveltejs/kit/hooks';
 import { handle as authHandle } from './auth';
 import { getOrCreateAnonymousSession } from '$lib/server/queries';
 
+const safeAuthHandle: Handle = async ({ event, resolve }) => {
+  try {
+    return await authHandle({ event, resolve });
+  } catch {
+    // Auth middleware crashed (e.g. invalid session cookie) — continue without auth
+    return resolve(event);
+  }
+};
+
 const appHandle: Handle = async ({ event, resolve }) => {
   event.locals.user = null;
   event.locals.anonymousSessionId = '';
@@ -42,4 +51,4 @@ const appHandle: Handle = async ({ event, resolve }) => {
   return resolve(event);
 };
 
-export const handle = sequence(authHandle, appHandle);
+export const handle = sequence(safeAuthHandle, appHandle);
