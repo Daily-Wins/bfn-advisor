@@ -578,17 +578,16 @@
     "file": "10a-anläggningstillgångar-anskaffning-avskrivning.md",
     "facts": [
       {
+        "punkt": "10.5",
+        "type": "belopp",
+        "belopp": "ett halvt prisbasbelopp (28 650 kr för 2025)",
+        "summary": "Inventarier av mindre värde får kostnadsföras direkt om anskaffningsvärdet understiger ett halvt prisbasbelopp"
+      },
+      {
         "punkt": "10.6",
         "type": "belopp",
         "tid": "tre år",
-        "summary": "10"
-      },
-      {
-        "punkt": "10.8",
-        "type": "belopp",
-        "belopp": "100 000 kronor, 120 000 kronor",
-        "tid": "fem år",
-        "summary": "10"
+        "summary": "Korttidsinventarier med ekonomisk livslängd högst tre år får kostnadsföras oavsett belopp"
       },
       {
         "punkt": "10.27",
@@ -752,8 +751,8 @@
       {
         "punkt": "12.6",
         "type": "belopp",
-        "belopp": "100 000 kronor, 120 000 kronor",
-        "summary": "12"
+        "belopp": "plus/minus 20 procent av redovisat värde",
+        "summary": "Varulager till bestämd mängd och fast värde anses inte variera väsentligt om värdet ligger i intervallet +/- 20 %"
       }
     ]
   },
