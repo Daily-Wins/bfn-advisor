@@ -9,13 +9,17 @@ const appHandle: Handle = async ({ event, resolve }) => {
   event.locals.questionCount = 0;
 
   // Check Auth0 session
-  const session = await event.locals.auth();
-  if (session?.user?.email) {
-    event.locals.user = {
-      id: session.user.id ?? session.user.email,
-      email: session.user.email,
-    };
-    return resolve(event);
+  try {
+    const session = await event.locals.auth();
+    if (session?.user?.email) {
+      event.locals.user = {
+        id: session.user.id ?? session.user.email,
+        email: session.user.email,
+      };
+      return resolve(event);
+    }
+  } catch {
+    // Auth session invalid/expired — continue as anonymous
   }
 
   // Anonymous session tracking for freemium gating
