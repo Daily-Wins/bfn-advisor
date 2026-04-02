@@ -1390,7 +1390,7 @@
         "punkt": "18.18",
         "type": "belopp",
         "tid": "fem år",
-        "summary": "Nyttjandeperiod för goodwill/utvecklingsutgifter ska anses vara fem år om den inte kan fastställas (4 kap. 4 § ÅRL)"
+        "summary": "Nyttjandeperiod för goodwill/utvecklingsutgifter ska anses vara fem år om den inte kan fastställas (4 kap. 2 § ÅRL)"
       }
     ]
   },
@@ -2125,14 +2125,7 @@
     "regulation": "K1 Enskilda",
     "dir": "k1-enskilda",
     "file": "01-tillämpning.md",
-    "facts": [
-      {
-        "punkt": "1.2",
-        "type": "belopp",
-        "belopp": "5 000 kronor",
-        "summary": "1"
-      }
-    ]
+    "facts": []
   },
   {
     "regulation": "K1 Enskilda",
@@ -2225,12 +2218,6 @@
         "summary": "6"
       },
       {
-        "punkt": "6.63",
-        "type": "belopp",
-        "belopp": "5 000 kronor",
-        "summary": "och 6"
-      },
-      {
         "punkt": "6.59",
         "type": "belopp",
         "belopp": "5 000 kronor",
@@ -2246,8 +2233,7 @@
         "punkt": "6.72",
         "type": "belopp",
         "belopp": "5 000 kronor",
-        "tid": "tre månader, två månader",
-        "summary": "6"
+        "summary": "Förskott som överstiger 5 000 kr ska redovisas som förutbetald kostnad"
       },
       {
         "punkt": "6.73",
@@ -2295,12 +2281,6 @@
         "summary": "7"
       },
       {
-        "punkt": "7.1",
-        "type": "belopp",
-        "belopp": "5 000 kronor",
-        "summary": "angående motsvarande förhållande vad gäller kundfakturor som borde ha utställts)"
-      },
-      {
         "punkt": "7.10",
         "type": "belopp",
         "tid": "ett år",
@@ -2318,14 +2298,7 @@
     "regulation": "K1 Ideella",
     "dir": "k1-ideella",
     "file": "01-tillämpning.md",
-    "facts": [
-      {
-        "punkt": "1.1",
-        "type": "belopp",
-        "belopp": "5 000 kronor",
-        "summary": "och 1"
-      }
-    ]
+    "facts": []
   },
   {
     "regulation": "K1 Ideella",
@@ -2394,12 +2367,6 @@
         "summary": "6"
       },
       {
-        "punkt": "6.35",
-        "type": "belopp",
-        "tid": "fem år",
-        "summary": "6"
-      },
-      {
         "punkt": "6.40",
         "type": "belopp",
         "belopp": "5 000 kronor",
@@ -2413,12 +2380,6 @@
       },
       {
         "punkt": "6.52",
-        "type": "belopp",
-        "belopp": "5 000 kronor",
-        "summary": "6"
-      },
-      {
-        "punkt": "6.54",
         "type": "belopp",
         "belopp": "5 000 kronor",
         "summary": "6"
@@ -2442,13 +2403,6 @@
         "summary": "6"
       },
       {
-        "punkt": "6.78",
-        "type": "belopp",
-        "belopp": "5 000 kronor",
-        "tid": "tre månader, två månader",
-        "summary": "6"
-      },
-      {
         "punkt": "6.1",
         "type": "changed_rule",
         "summary": "1 En immateriell eller materiell anläggningstillgång som tas upp i balansräkningen ska förtecknas i en särskild förteckning"
@@ -2460,12 +2414,6 @@
     "dir": "k1-ideella",
     "file": "07-resultaträkningen.md",
     "facts": [
-      {
-        "punkt": "7.4",
-        "type": "belopp",
-        "tid": "sex månader",
-        "summary": "7"
-      },
       {
         "punkt": "7.5",
         "type": "belopp",
