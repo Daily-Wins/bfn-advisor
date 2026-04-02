@@ -32,7 +32,7 @@ export async function streamCompletion(
       'X-Title': 'K2K3.ai',
     },
     body: JSON.stringify({
-      model: 'anthropic/claude-sonnet-4-6',
+      model: 'anthropic/claude-sonnet-4.6',
       messages: [
         { role: 'system', content: systemMessage },
         ...messages,
