@@ -372,15 +372,13 @@
       {
         "punkt": "6.6",
         "type": "belopp",
-        "belopp": "7 000 kronor, 300 000 kronor, 50 000 kronor, 100 000 kronor",
-        "tid": "tre år",
-        "summary": "Ett företag ska redovisa en inkomst som intäkt om"
+        "belopp": "7 000 kronor",
+        "summary": "Inkomster och utgifter under 7 000 kr behöver inte periodiseras (hänvisning till punkt 2.4)"
       },
       {
         "punkt": "6.24",
         "type": "belopp",
-        "belopp": "100 000 kronor, 80 000 kronor, 150 000 kronor, 175 000 kronor, 17 000 kronor, 29 500 kronor",
-        "summary": "Uppdrag till fast pris som inte är fullgjorda och som redovisas enligt alternativregeln ska redovisas i följande poster:"
+        "summary": "Uppdrag till fast pris som inte är fullgjorda ska redovisas enligt alternativregeln i posterna Pågående arbete och Fakturerat men ej upparbetat"
       },
       {
         "punkt": "6.1",
@@ -474,15 +472,14 @@
       {
         "punkt": "7.8",
         "type": "belopp",
-        "belopp": "7 000 kronor, 300 000 kronor, 50 000 kronor, 100 000 kronor",
-        "summary": "En utgift som inte kan hänföras till någon vara eller annan prestation ska redovisas som kostnad direkt"
+        "belopp": "7 000 kronor",
+        "summary": "Utgift som inte kan hänföras till vara/prestation ska redovisas som kostnad det räkenskapsår den uppkommer (hänvisning till 7 000 kr-gränsen punkt 2.4)"
       },
       {
         "punkt": "7.9",
         "type": "belopp",
-        "belopp": "20 000 kronor, 25 000 kronor",
-        "tid": "fem månader, tre år, ett år",
-        "summary": "Återkommer varje räkenskapsår samma slag av utgift, som inte är personalutgift, får utgiften redovisas som kostnad det räkenskapsår företaget normalt erhåller faktura eller gör en utbetalning enligt a"
+        "belopp": "20 procent variation",
+        "summary": "Återkommande utgifter behöver inte periodiseras om beloppet kan antas variera med högst 20 % mellan åren"
       },
       {
         "punkt": "7.1",
@@ -542,8 +539,8 @@
       {
         "punkt": "9.6",
         "type": "belopp",
-        "tid": "fem år",
-        "summary": "9"
+        "tid": "tolv månader",
+        "summary": "Placering som förfaller eller avses avyttras inom 12 månader efter balansdagen ska omklassificeras till omsättningstillgång det sista året"
       },
       {
         "punkt": "9.1",
@@ -592,8 +589,8 @@
       {
         "punkt": "10.27",
         "type": "belopp",
-        "tid": "fem år, tio år, fyra år",
-        "summary": "10"
+        "tid": "fem år",
+        "summary": "Nyttjandeperioden för maskiner, inventarier och immateriella anläggningstillgångar får bestämmas till fem år (förenklingsregel)"
       },
       {
         "punkt": "10.1",
@@ -657,8 +654,8 @@
       {
         "punkt": "10.36",
         "type": "belopp",
-        "tid": "fem år, två år",
-        "summary": "10"
+        "tid": "fem år",
+        "summary": "Nedskrivning av anläggningstillgång med nyttjandeperiod > 5 år: ska skrivas ned till värde som om avskrivning skett med 5 års nyttjandeperiod"
       },
       {
         "punkt": "10.32",
@@ -680,20 +677,19 @@
       {
         "punkt": "11.2",
         "type": "belopp",
-        "tid": "fem år",
-        "summary": "11"
+        "tid": "tolv månader",
+        "summary": "Placering som förfaller/avses avyttras inom 12 månader ska klassificeras som omsättningstillgång"
       },
       {
         "punkt": "11.20",
         "type": "belopp",
-        "belopp": "25 000 kronor, 200 000 kronor, 20 000 kronor",
-        "summary": "11"
+        "belopp": "25 000 kronor",
+        "summary": "Nedskrivning behöver inte göras om värdenedgången understiger det lägsta av 25 000 kr och 10 % av eget kapital vid årets ingång"
       },
       {
         "punkt": "11.23",
         "type": "belopp",
-        "belopp": "50 000 kronor, 15 000 kronor, 35 000 kronor, 40 000 kronor, 25 000 kronor",
-        "summary": "11"
+        "summary": "Återföring av nedskrivning får ske högst upp till ursprungligt anskaffningsvärde"
       },
       {
         "punkt": "11.26",
@@ -918,12 +914,6 @@
     "file": "18-noter.md",
     "facts": [
       {
-        "punkt": "17.5",
-        "type": "belopp",
-        "tid": "fem år",
-        "summary": "andra stycket"
-      },
-      {
         "punkt": "18.1",
         "type": "changed_rule",
         "summary": "1 Detta kapitel ska tillämpas på noter som ska lämnas i årsredovisningen"
@@ -1005,8 +995,7 @@
       {
         "punkt": "19.10",
         "type": "belopp",
-        "belopp": "50 000 kronor, 15 000 kronor, 35 000 kronor, 40 000 kronor, 25 000 kronor",
-        "summary": "19"
+        "summary": "Återföring av nedskrivning av andelar i koncernföretag får ske högst upp till ursprungligt anskaffningsvärde"
       },
       {
         "punkt": "19.21",
@@ -1401,7 +1390,7 @@
         "punkt": "18.18",
         "type": "belopp",
         "tid": "fem år",
-        "summary": "**Nyttjandeperioden** för en immateriell anläggningstillgång som uppkommit till följd av avtalsenliga eller andra juridiska rättigheter får inte överstiga den period som omfattas av avtalet eller de j"
+        "summary": "Nyttjandeperiod för goodwill/utvecklingsutgifter ska anses vara fem år om den inte kan fastställas (4 kap. 4 § ÅRL)"
       }
     ]
   },
@@ -1465,9 +1454,8 @@
       {
         "punkt": "21.9",
         "type": "belopp",
-        "belopp": "400 000 kronor",
-        "tid": "sex månader",
-        "summary": "Avsättningen ska redovisas till **nuvärdet** av de framtida betalningar som krävs för att reglera förpliktelsen, om effekten av när i tiden betalningen sker är väsentlig"
+        "tid": "",
+        "summary": "Avsättning ska redovisas till nuvärdet av framtida betalningar som krävs för att reglera åtagandet"
       },
       {
         "punkt": "21.1",
@@ -1562,8 +1550,7 @@
       {
         "punkt": "32.3",
         "type": "belopp",
-        "tid": "fyra månader",
-        "summary": "Händelser som bekräftar förhållanden som förelåg på **balansdagen** men som inträffat efter balansdagen och innan den **finansiella rapporten** är upprättad ska beaktas genom att justera beloppen elle"
+        "summary": "Händelser som bekräftar förhållanden på balansdagen ska beaktas vid upprättande av finansiella rapporter"
       }
     ]
   },
@@ -2130,8 +2117,7 @@
       {
         "punkt": "2.10",
         "type": "belopp",
-        "belopp": "100 000 kronor, 80 000 kronor",
-        "summary": "Vid fusion mellan ekonomiska föreningar ska övertagna tillgångar och skulder redovisas till de bokförda värden de hade i det överlåtande företaget"
+        "summary": "Vid fusion mellan ekonomiska föreningar ska övertagna tillgångar och skulder redovisas till bokfört värde"
       }
     ]
   },
@@ -2205,8 +2191,8 @@
       {
         "punkt": "6.30",
         "type": "belopp",
-        "belopp": "3 500 kronor",
-        "summary": "6"
+        "belopp": "ett halvt prisbasbelopp",
+        "summary": "Inventarier av mindre värde: materiella anläggningstillgångar med anskaffningsvärde under halvt prisbasbelopp får kostnadsföras"
       },
       {
         "punkt": "6.31",
@@ -2217,8 +2203,8 @@
       {
         "punkt": "6.33",
         "type": "belopp",
-        "belopp": "5 000 kronor, 20 000 kronor, 8 000 kronor, 28 000 kronor, 4 000 kronor",
-        "summary": "6"
+        "belopp": "5 000 kronor",
+        "summary": "Externa utgifter direkt hänförliga till förvärv ska räknas in i anskaffningsvärdet om de sammanlagt överstiger 5 000 kr"
       },
       {
         "punkt": "6.34",
@@ -2380,8 +2366,8 @@
       {
         "punkt": "6.27",
         "type": "belopp",
-        "belopp": "42 000 kronor, 26 249 kronor, 23 624 kronor, 20 999 kronor, 3 500 kronor",
-        "summary": "6"
+        "belopp": "ett halvt prisbasbelopp",
+        "summary": "Inventarier av mindre värde: materiella anläggningstillgångar med anskaffningsvärde under halvt prisbasbelopp får kostnadsföras"
       },
       {
         "punkt": "6.28",
@@ -2392,8 +2378,8 @@
       {
         "punkt": "6.30",
         "type": "belopp",
-        "belopp": "5 000 kronor, 20 000 kronor, 8 000 kronor, 28 000 kronor, 4 000 kronor",
-        "summary": "6"
+        "belopp": "5 000 kronor",
+        "summary": "Externa utgifter direkt hänförliga till förvärv ska räknas in i anskaffningsvärdet om de sammanlagt överstiger 5 000 kr"
       },
       {
         "punkt": "6.31",
