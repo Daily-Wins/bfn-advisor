@@ -337,7 +337,7 @@
       },
       {
         "punkt": "6.24",
-        "type": "belopp",
+        "type": "changed_rule",
         "summary": "Uppdrag till fast pris som inte är fullgjorda ska redovisas enligt alternativregeln i posterna Pågående arbete och Fakturerat men ej upparbetat"
       },
       {
@@ -513,7 +513,7 @@
       },
       {
         "punkt": "11.23",
-        "type": "belopp",
+        "type": "changed_rule",
         "summary": "Återföring av nedskrivning får ske högst upp till ursprungligt anskaffningsvärde"
       },
       {
@@ -541,11 +541,6 @@
         "punkt": "11.13A",
         "type": "new_rule",
         "summary": "13A Det redovisade värdet på en kapitalförsäkring ska minskas med den del av ett uttag ur försäkringen som leder till att försäkringens värde vid uttagstillfället understiger det redovisade värdet"
-      },
-      {
-        "punkt": "11.23",
-        "type": "changed_rule",
-        "summary": "innan jämförelse görs mellan det redovisade värdet och värdet på balansdagen"
       },
       {
         "punkt": "11.20",
@@ -739,7 +734,7 @@
       },
       {
         "punkt": "19.10",
-        "type": "belopp",
+        "type": "changed_rule",
         "summary": "Återföring av nedskrivning av andelar i koncernföretag får ske högst upp till ursprungligt anskaffningsvärde"
       },
       {
@@ -1168,8 +1163,7 @@
     "facts": [
       {
         "punkt": "21.9",
-        "type": "belopp",
-        "tid": "",
+        "type": "changed_rule",
         "summary": "Avsättning ska redovisas till nuvärdet av framtida betalningar som krävs för att reglera åtagandet"
       },
       {
@@ -1264,7 +1258,7 @@
     "facts": [
       {
         "punkt": "32.3",
-        "type": "belopp",
+        "type": "changed_rule",
         "summary": "Händelser som bekräftar förhållanden på balansdagen ska beaktas vid upprättande av finansiella rapporter"
       }
     ]
@@ -1811,7 +1805,7 @@
     "facts": [
       {
         "punkt": "2.10",
-        "type": "belopp",
+        "type": "changed_rule",
         "summary": "Vid fusion mellan ekonomiska föreningar ska övertagna tillgångar och skulder redovisas till bokfört värde"
       }
     ]
