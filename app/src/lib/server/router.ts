@@ -145,7 +145,14 @@ const ROUTES: RouteEntry[] = [
   { keywords: ['gränsvärde', 'storleksgräns', 'antal anställda gräns', 'balansomslutning gräns', 'nettoomsättning gräns', 'k1 k2 k3 välja', 'vilken kategori', 'större företag', 'mindre företag gräns'], regulation: 'Gränsvärden', dir: 'gransvarden', file: '01-allmant-rad.md', label: 'Gränsvärden – Allmänt råd' },
 
   // ===== BRF =====
-  { keywords: ['brf upplysning', 'bostadsrättsförening nyckeltal', 'årsavgift per kvadratmeter', 'skuldsättning brf', 'energikostnad brf', 'räntekänslighet brf', 'brf årsredovisning'], regulation: 'BRF', dir: 'brf-upplysningar', file: '04-fleraarsoversikt.md', label: 'BRF – Nyckeltal' },
+  { keywords: ['brf tillämpning', 'brf regelverk', 'bfnar 2023:1'], regulation: 'BRF', dir: 'brf-upplysningar', file: '02-tillampning.md', label: 'BRF – Tillämpning' },
+  { keywords: ['brf verksamhet', 'brf förvaltningsberättelse', 'brf drift', 'brf underhåll', 'brf fastighetsförvaltning', 'brf underhållsplan', 'brf tomträtt', 'brf privatbostadsföretag', 'brf samfällighet'], regulation: 'BRF', dir: 'brf-upplysningar', file: '03-allmant-om-verksamheten.md', label: 'BRF – Allmänt om verksamheten' },
+  { keywords: ['brf upplysning', 'bostadsrättsförening nyckeltal', 'årsavgift per kvadratmeter', 'skuldsättning brf', 'energikostnad brf', 'räntekänslighet brf', 'brf årsredovisning', 'brf flerårsöversikt'], regulation: 'BRF', dir: 'brf-upplysningar', file: '04-fleraarsoversikt.md', label: 'BRF – Nyckeltal' },
+  { keywords: ['brf förlust', 'brf upplysning förlust', 'brf negativt resultat', 'brf ekonomiska åtaganden'], regulation: 'BRF', dir: 'brf-upplysningar', file: '05-upplysning-vid-forlust.md', label: 'BRF – Upplysning vid förlust' },
+  { keywords: ['brf kassaflödesanalys', 'brf kassaflöde', 'brf likvida medel'], regulation: 'BRF', dir: 'brf-upplysningar', file: '06-kassaflodesanalys.md', label: 'BRF – Kassaflödesanalys' },
+  { keywords: ['brf noter', 'brf tilläggsupplysning', 'brf nettoomsättning', 'brf årsavgift not'], regulation: 'BRF', dir: 'brf-upplysningar', file: '07-noter.md', label: 'BRF – Noter' },
+  { keywords: ['brf k2', 'brf årsredovisning k2', 'brf indirekt metod', 'brf direkt metod'], regulation: 'BRF', dir: 'brf-upplysningar', file: '08-sarskilda-regler-k2.md', label: 'BRF – Särskilda regler K2' },
+  { keywords: ['brf k3', 'brf årsredovisning k3', 'brf komponentavskrivning', 'brf komponent byggnad', 'brf underhållsansvar'], regulation: 'BRF', dir: 'brf-upplysningar', file: '09-sarskilda-regler-k3.md', label: 'BRF – Särskilda regler K3' },
 
   // ===== Årsbokslut =====
   { keywords: ['årsbokslut', 'bfnar 2017:3', 'årsbokslut regler'], regulation: 'Årsbokslut', dir: 'arsbokslut', file: '01-tillämpning.md', label: 'Årsbokslut Kap 1 – Tillämpning' },

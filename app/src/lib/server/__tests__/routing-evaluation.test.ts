@@ -231,6 +231,41 @@ const otherCases: GoldenCase[] = [
     description: 'BRF key metrics routes to BRF Ch 4',
   },
   {
+    question: 'Hur ska en brf kassaflödesanalys se ut?',
+    expectedFiles: ['06-kassaflodesanalys.md'],
+    expectedRegulation: 'BRF',
+    description: 'BRF cash flow routes to BRF Ch 6',
+  },
+  {
+    question: 'Vilka brf noter ska lämnas i årsredovisningen?',
+    expectedFiles: ['07-noter.md'],
+    expectedRegulation: 'BRF',
+    description: 'BRF notes routes to BRF Ch 7',
+  },
+  {
+    question: 'Vilka särskilda brf k2 regler finns?',
+    expectedFiles: ['08-sarskilda-regler-k2.md'],
+    expectedRegulation: 'BRF',
+    description: 'BRF K2 special rules routes correctly',
+  },
+  {
+    question: 'Vilka särskilda regler gäller för brf k3 underhållsansvar?',
+    expectedFiles: ['09-sarskilda-regler-k3.md'],
+    description: 'BRF K3 special rules routes to BRF Ch 9',
+  },
+  {
+    question: 'Vad ska brf förvaltningsberättelse innehålla om verksamheten?',
+    expectedFiles: ['03-allmant-om-verksamheten.md'],
+    expectedRegulation: 'BRF',
+    description: 'BRF management report routes to BRF Ch 3',
+  },
+  {
+    question: 'Vad gäller vid brf förlust och ekonomiska åtaganden?',
+    expectedFiles: ['05-upplysning-vid-forlust.md'],
+    expectedRegulation: 'BRF',
+    description: 'BRF loss disclosure routes to BRF Ch 5',
+  },
+  {
     question: 'Hur fungerar nedströmsfusion?',
     expectedFiles: ['03-nedströmsfusion.md'],
     expectedRegulation: 'Fusioner',
