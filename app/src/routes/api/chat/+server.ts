@@ -1,12 +1,42 @@
 import { json } from '@sveltejs/kit';
 import type { RequestHandler } from './$types';
 import { routeQuestionSemantic } from '$lib/server/semantic-router';
+import type { ChapterMatch } from '$lib/server/semantic-router';
 import { loadChapters, formatContext } from '$lib/server/chapters';
 import { streamCompletion } from '$lib/server/ai';
 import { incrementAnonymousCount, recordUserQuestion } from '$lib/server/queries';
 
+export type RegulationScope =
+  | { type: 'single'; regulation: string }
+  | { type: 'comparison'; regulations: string[] }
+  | { type: 'auto' };
+
+const VALID_REGULATIONS = new Set([
+  'K2', 'K3', 'Bokföring', 'Fusioner', 'BRF', 'Årsbokslut',
+  'Gränsvärden', 'K1 Enskilda', 'K1 Ideella',
+]);
+
+export function resolveScope(regulation: string): RegulationScope {
+  if (regulation === 'K2K3') return { type: 'comparison', regulations: ['K2', 'K3'] };
+  if (VALID_REGULATIONS.has(regulation)) return { type: 'single', regulation };
+  return { type: 'auto' };
+}
+
+export function filterMatchesByScope(matches: ChapterMatch[], scope: RegulationScope): ChapterMatch[] {
+  if (scope.type === 'auto') return matches;
+  if (scope.type === 'single') {
+    const filtered = matches.filter(m => m.regulation === scope.regulation);
+    return filtered.length > 0 ? filtered : matches;
+  }
+  if (scope.type === 'comparison') {
+    const filtered = matches.filter(m => scope.regulations.includes(m.regulation));
+    return filtered.length > 0 ? filtered : matches;
+  }
+  return matches;
+}
+
 export const POST: RequestHandler = async ({ request, locals }) => {
-  const { message, history = [] } = await request.json();
+  const { message, history = [], regulation = 'auto' } = await request.json();
 
   if (!message || typeof message !== 'string') {
     return json({ error: 'Message required' }, { status: 400 });
@@ -26,8 +56,11 @@ export const POST: RequestHandler = async ({ request, locals }) => {
     .map((m: { content: string }) => m.content);
   const routingQuery = [...lastUserMessages, message].join(' ');
 
+  const scope = resolveScope(regulation);
+
   // Route question to relevant chapters (semantic via Jina embeddings)
-  const matches = await routeQuestionSemantic(routingQuery);
+  const allMatches = await routeQuestionSemantic(routingQuery);
+  const matches = filterMatchesByScope(allMatches, scope);
 
   // Load chapter content
   const chapters = await loadChapters(matches);
