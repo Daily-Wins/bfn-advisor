@@ -145,7 +145,7 @@ const ROUTES: RouteEntry[] = [
   { keywords: ['gränsvärde', 'storleksgräns', 'antal anställda gräns', 'balansomslutning gräns', 'nettoomsättning gräns', 'k1 k2 k3 välja', 'vilken kategori', 'större företag', 'mindre företag gräns'], regulation: 'Gränsvärden', dir: 'gransvarden', file: '01-allmant-rad.md', label: 'Gränsvärden – Allmänt råd' },
 
   // ===== BRF =====
-  { keywords: ['brf upplysning', 'bostadsrättsförening nyckeltal', 'årsavgift per kvadratmeter', 'skuldsättning brf', 'energikostnad brf', 'räntekänslighet brf', 'brf årsredovisning'], regulation: 'BRF', dir: 'brf-upplysningar', file: '02-nyckeltal.md', label: 'BRF – Nyckeltal' },
+  { keywords: ['brf upplysning', 'bostadsrättsförening nyckeltal', 'årsavgift per kvadratmeter', 'skuldsättning brf', 'energikostnad brf', 'räntekänslighet brf', 'brf årsredovisning'], regulation: 'BRF', dir: 'brf-upplysningar', file: '04-fleraarsoversikt.md', label: 'BRF – Nyckeltal' },
 
   // ===== Årsbokslut =====
   { keywords: ['årsbokslut', 'bfnar 2017:3', 'årsbokslut regler'], regulation: 'Årsbokslut', dir: 'arsbokslut', file: '01-tillämpning.md', label: 'Årsbokslut Kap 1 – Tillämpning' },
