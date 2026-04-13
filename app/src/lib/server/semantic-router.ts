@@ -33,8 +33,8 @@ interface StoredEmbedding {
 
 const sections: StoredEmbedding[] = embeddingsData as StoredEmbedding[];
 
-/** Compute cosine similarity between two vectors */
-function cosineSimilarity(a: number[], b: number[]): number {
+/** @internal - exported for testing */
+export function cosineSimilarity(a: number[], b: number[]): number {
   let dot = 0;
   let normA = 0;
   let normB = 0;
@@ -70,8 +70,8 @@ async function getQueryEmbedding(query: string): Promise<number[]> {
   return data.data[0].embedding;
 }
 
-/** Detect regulation preference for boosting */
-function detectRegulationBoost(question: string): string | null {
+/** @internal - exported for testing */
+export function detectRegulationBoost(question: string): string | null {
   const q = question.toLowerCase();
   if (/\bk2\b/.test(q) && !/\bk3\b/.test(q)) return 'K2';
   if (/\bk3\b/.test(q) && !/\bk2\b/.test(q)) return 'K3';
@@ -80,8 +80,8 @@ function detectRegulationBoost(question: string): string | null {
   return null;
 }
 
-/** Direct punkt-number lookup */
-function matchPunktDirect(question: string): ChapterMatch | null {
+/** @internal - exported for testing */
+export function matchPunktDirect(question: string): ChapterMatch | null {
   const match = question.match(/punkt\s+(\d+)\.(\d+)/i);
   if (!match) return null;
 
@@ -141,8 +141,9 @@ async function getSemanticResults(question: string): Promise<ChapterMatch[]> {
 /**
  * Reciprocal Rank Fusion: combines ranked lists from multiple retrievers.
  * RRF_score(d) = Σ 1/(k + rank_i(d))
+ * @internal - exported for testing
  */
-function reciprocalRankFusion(
+export function reciprocalRankFusion(
   lists: ChapterMatch[][],
   k = 60,
 ): ChapterMatch[] {
