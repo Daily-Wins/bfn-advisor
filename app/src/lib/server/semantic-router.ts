@@ -1,12 +1,15 @@
 /**
- * Semantic router using pre-computed Jina embeddings.
- * Computes query embedding at runtime via Jina API, then
- * cosine similarity against pre-computed chapter embeddings.
+ * Semantic router using pre-computed section-level embeddings.
  *
- * Latency: ~200-400ms for Jina API call (parallel with nothing — no extra wait for user)
+ * Computes query embedding at runtime via OpenRouter bge-m3, then
+ * cosine similarity against pre-computed section embeddings.
+ * Results are fused with keyword router via Reciprocal Rank Fusion (RRF).
+ *
+ * Latency: ~200-400ms for OpenRouter embedding call (keyword router runs in parallel for free)
  */
 
-import { JINA_API_KEY } from '$env/static/private';
+import { OPENROUTER_API_KEY } from '$env/static/private';
+import { routeQuestion } from './router';
 import embeddingsData from './embeddings.json';
 
 export interface ChapterMatch {
@@ -15,47 +18,52 @@ export interface ChapterMatch {
   file: string;
   score: number;
   label: string;
+  section?: string;
 }
 
 interface StoredEmbedding {
   regulation: string;
   dir: string;
   file: string;
+  section: string;
   label: string;
-  description: string;
+  text: string;
   embedding: number[];
 }
 
-const chapters: StoredEmbedding[] = embeddingsData as StoredEmbedding[];
+const sections: StoredEmbedding[] = embeddingsData as StoredEmbedding[];
 
-/** Compute cosine similarity between two normalized vectors (just dot product) */
+/** Compute cosine similarity between two vectors */
 function cosineSimilarity(a: number[], b: number[]): number {
   let dot = 0;
+  let normA = 0;
+  let normB = 0;
   for (let i = 0; i < a.length; i++) {
     dot += a[i] * b[i];
+    normA += a[i] * a[i];
+    normB += b[i] * b[i];
   }
-  return dot;
+  return dot / (Math.sqrt(normA) * Math.sqrt(normB));
 }
 
-/** Get query embedding from Jina API */
+/** Get query embedding from OpenRouter bge-m3 */
 async function getQueryEmbedding(query: string): Promise<number[]> {
-  const response = await fetch('https://api.jina.ai/v1/embeddings', {
+  const response = await fetch('https://openrouter.ai/api/v1/embeddings', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      'Authorization': `Bearer ${JINA_API_KEY}`,
+      'Authorization': `Bearer ${OPENROUTER_API_KEY}`,
+      'HTTP-Referer': 'https://k2k3.ai',
+      'X-Title': 'K2K3.ai',
     },
     body: JSON.stringify({
-      model: 'jina-embeddings-v3',
+      model: 'baai/bge-m3',
       input: [query],
-      normalized: true,
-      embedding_type: 'float',
-      task: 'retrieval.query',
     }),
   });
 
   if (!response.ok) {
-    throw new Error(`Jina API error: ${response.status}`);
+    throw new Error(`OpenRouter embedding error: ${response.status}`);
   }
 
   const data = await response.json() as { data: { embedding: number[] }[] };
@@ -68,7 +76,7 @@ function detectRegulationBoost(question: string): string | null {
   if (/\bk2\b/.test(q) && !/\bk3\b/.test(q)) return 'K2';
   if (/\bk3\b/.test(q) && !/\bk2\b/.test(q)) return 'K3';
   if (/\bfusion\b/.test(q)) return 'Fusioner';
-  if (/\bbokför/.test(q) && !/\b(års)?redovisning/.test(q)) return 'Bokföring';
+  if (/\bbokföring(slagen|snämnden)?\b/.test(q) && !/\b(års)?redovisning/.test(q)) return 'Bokföring';
   return null;
 }
 
@@ -78,127 +86,121 @@ function matchPunktDirect(question: string): ChapterMatch | null {
   if (!match) return null;
 
   const chapterNum = parseInt(match[1]);
+  const padded = chapterNum.toString().padStart(2, '0');
 
-  // Find chapter by punkt prefix in K2 (most common)
-  const k2Match = chapters.find(c =>
-    c.regulation === 'K2' &&
-    c.file.startsWith(`${chapterNum.toString().padStart(2, '0')}-`) ||
-    c.file.startsWith(`${chapterNum}a-`) ||
-    c.file.startsWith(`${chapterNum}b-`)
+  // Find any section from the matching chapter file
+  const sectionMatch = sections.find(s =>
+    s.regulation === 'K2' && (
+      s.file.startsWith(`${padded}-`) ||
+      s.file.startsWith(`${chapterNum}a-`) ||
+      s.file.startsWith(`${chapterNum}b-`)
+    )
   );
 
-  if (k2Match) {
+  if (sectionMatch) {
     return {
-      regulation: k2Match.regulation,
-      dir: k2Match.dir,
-      file: k2Match.file,
+      regulation: sectionMatch.regulation,
+      dir: sectionMatch.dir,
+      file: sectionMatch.file,
       score: 1.0,
-      label: k2Match.label,
+      label: sectionMatch.label,
     };
   }
   return null;
 }
 
+/** Get semantic search results (section-level) */
+async function getSemanticResults(question: string): Promise<ChapterMatch[]> {
+  const queryEmbedding = await getQueryEmbedding(question);
+  const regBoost = detectRegulationBoost(question);
+
+  const scored = sections.map(s => {
+    let score = cosineSimilarity(queryEmbedding, s.embedding);
+
+    if (regBoost && s.regulation.startsWith(regBoost)) {
+      score *= 1.3;
+    }
+    if (regBoost && !s.regulation.startsWith(regBoost)) {
+      score *= 0.7;
+    }
+
+    return {
+      regulation: s.regulation,
+      dir: s.dir,
+      file: s.file,
+      section: s.section,
+      label: s.label,
+      score,
+    };
+  });
+
+  scored.sort((a, b) => b.score - a.score);
+  return scored.slice(0, 20); // Top 20 for RRF input
+}
+
+/**
+ * Reciprocal Rank Fusion: combines ranked lists from multiple retrievers.
+ * RRF_score(d) = Σ 1/(k + rank_i(d))
+ */
+function reciprocalRankFusion(
+  lists: ChapterMatch[][],
+  k = 60,
+): ChapterMatch[] {
+  const scoreMap = new Map<string, { score: number; match: ChapterMatch }>();
+
+  for (const list of lists) {
+    for (let rank = 0; rank < list.length; rank++) {
+      const match = list[rank];
+      // Key by file (chapter-level dedup) — sections from same file merge
+      const key = `${match.dir}/${match.file}`;
+      const existing = scoreMap.get(key);
+      const rrfScore = 1 / (k + rank + 1);
+
+      if (existing) {
+        existing.score += rrfScore;
+        // Keep the match with the best individual score (most relevant section)
+        if (match.score > existing.match.score) {
+          existing.match = match;
+        }
+      } else {
+        scoreMap.set(key, { score: rrfScore, match });
+      }
+    }
+  }
+
+  return [...scoreMap.values()]
+    .sort((a, b) => b.score - a.score)
+    .map(v => ({ ...v.match, score: v.score }));
+}
+
 export async function routeQuestionSemantic(question: string): Promise<ChapterMatch[]> {
   const results: ChapterMatch[] = [];
 
-  // Layer 1: Direct punkt-number match
+  // Layer 1: Direct punkt-number match (highest priority)
   const punktMatch = matchPunktDirect(question);
   if (punktMatch) {
     results.push(punktMatch);
   }
 
-  // Layer 2: Semantic similarity via Jina
+  // Layer 2: RRF fusion of keyword + semantic results (run in parallel)
   try {
-    const queryEmbedding = await getQueryEmbedding(question);
-    const regBoost = detectRegulationBoost(question);
+    const [semanticResults, keywordResults] = await Promise.all([
+      getSemanticResults(question),
+      Promise.resolve(routeQuestion(question)),
+    ]);
 
-    const scored = chapters.map(ch => {
-      let score = cosineSimilarity(queryEmbedding, ch.embedding);
+    const fused = reciprocalRankFusion([semanticResults, keywordResults]);
 
-      // Boost if regulation matches preference
-      if (regBoost && ch.regulation.startsWith(regBoost)) {
-        score *= 1.3;
+    // Add fused results, skipping any punkt-match duplicates
+    for (const match of fused) {
+      const key = `${match.dir}/${match.file}`;
+      if (!results.find(r => `${r.dir}/${r.file}` === key)) {
+        results.push(match);
       }
-      // Slight penalty if regulation doesn't match explicit preference
-      if (regBoost && !ch.regulation.startsWith(regBoost)) {
-        score *= 0.7;
-      }
-
-      return { ...ch, score };
-    });
-
-    scored.sort((a, b) => b.score - a.score);
-
-    // When no regulation is specified, ensure we include chapters from
-    // multiple regulations (the user likely wants the most relevant answer
-    // regardless of which regulation it comes from)
-    if (!regBoost) {
-      // Take top result, then ensure diversity: include best from other regulations
-      const seen = new Set<string>();
-      const seenRegs = new Set<string>();
-      const diverse: typeof scored = [];
-
-      for (const ch of scored) {
-        const key = `${ch.dir}/${ch.file}`;
-        if (seen.has(key)) continue;
-
-        // Always take top 2 results regardless of regulation
-        if (diverse.length < 2) {
-          diverse.push(ch);
-          seen.add(key);
-          seenRegs.add(ch.regulation);
-          continue;
-        }
-
-        // For slots 3-4, prefer unseen regulations for diversity
-        if (!seenRegs.has(ch.regulation) && diverse.length < 4) {
-          diverse.push(ch);
-          seen.add(key);
-          seenRegs.add(ch.regulation);
-          continue;
-        }
-
-        // Fill remaining from top scores
-        if (diverse.length < 4) {
-          diverse.push(ch);
-          seen.add(key);
-        }
-
-        if (diverse.length >= 4) break;
-      }
-
-      for (const ch of diverse) {
-        const key = `${ch.dir}/${ch.file}`;
-        if (!results.find(r => `${r.dir}/${r.file}` === key)) {
-          results.push({
-            regulation: ch.regulation,
-            dir: ch.dir,
-            file: ch.file,
-            score: ch.score,
-            label: ch.label,
-          });
-        }
-      }
-    } else {
-      // Regulation specified — take top matches
-      for (const ch of scored) {
-        const key = `${ch.dir}/${ch.file}`;
-        if (!results.find(r => `${r.dir}/${r.file}` === key)) {
-          results.push({
-            regulation: ch.regulation,
-            dir: ch.dir,
-            file: ch.file,
-            score: ch.score,
-            label: ch.label,
-          });
-        }
-        if (results.length >= 3) break;
-      }
+      if (results.length >= 4) break;
     }
   } catch {
-    // Jina API failed — fall back to keyword router
-    const { routeQuestion } = await import('./router');
+    // Embedding API failed — fall back to keyword router only
     return routeQuestion(question);
   }
 

@@ -94,12 +94,20 @@ describe('formatContext', () => {
 		expect(result).toContain(chapters[0].content);
 	});
 
-	it('includes VERIFIERADE BELOPP section for chapters with belopp facts', async () => {
+	it('always includes global VERIFIERADE BELOPP section regardless of matches', async () => {
 		const chapters = await loadChapters([K2_CHAPTER_02]);
 		const result = formatContext(chapters, [K2_CHAPTER_02]);
 
-		expect(result).toContain('VERIFIERADE BELOPP (uppdaterade 2025, använd dessa exakt):');
+		expect(result).toContain('VERIFIERADE BELOPP OCH GRÄNSVÄRDEN (uppdaterade 2025, använd dessa exakt):');
 		expect(result).toContain('belopp:');
+	});
+
+	it('includes global belopp facts even with empty matches', async () => {
+		const result = formatContext([], []);
+
+		expect(result).toContain('VERIFIERADE BELOPP OCH GRÄNSVÄRDEN (uppdaterade 2025, använd dessa exakt):');
+		expect(result).toContain('7 000 kronor');
+		expect(result).toContain('[K2]');
 	});
 
 	it('includes NYLIGEN ÄNDRADE/NYA REGLER section for chapters with changed_rule facts', async () => {
@@ -117,19 +125,15 @@ describe('formatContext', () => {
 		const chapters = await loadChapters([K2_CHAPTER_02]);
 		const result = formatContext(chapters, [K2_CHAPTER_02]);
 
-		// Should contain structured belopp line like "K2 punkt 2.1A — belopp: 7 000 kronor"
-		expect(result).toMatch(/K2 punkt \d+\.\d+\w* — belopp:/);
+		// Should contain structured belopp line like "punkt 2.4 — belopp: 7 000 kronor"
+		expect(result).toMatch(/punkt \d+\.\d+\w* — belopp:/);
 	});
 
-	it('returns empty string for empty chapters and no matching facts', async () => {
-		const result = formatContext([], []);
-		expect(result).toBe('');
-	});
-
-	it('returns only facts section when chapters are empty but facts match', async () => {
+	it('returns only facts sections when chapters are empty but changed rules match', async () => {
 		const result = formatContext([], [K2_CHAPTER_01]);
 
-		// Should have facts but no chapter body
+		// Should have global facts and changed rules but no chapter body
+		expect(result).toContain('VERIFIERADE BELOPP OCH GRÄNSVÄRDEN');
 		expect(result).toContain('NYLIGEN ÄNDRADE/NYA REGLER');
 		expect(result).not.toContain('--- START:');
 	});

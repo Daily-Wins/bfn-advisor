@@ -7,6 +7,9 @@ const BASE_URL = process.argv[2] === 'prod'
   ? 'https://app-daily-wins.vercel.app'
   : 'http://localhost:5174';
 
+/** Cookie jar for maintaining session across requests */
+let sessionCookies = '';
+
 interface TestCase {
   id: number;
   name: string;
@@ -21,7 +24,8 @@ const TESTS: TestCase[] = [
     name: 'Periodiseringsgräns 7000 kr',
     question: 'Måste jag periodisera en faktura på 4 000 kr?',
     mustContain: ['7 000', 'punkt 2.4', 'periodisera'],
-    mustNotContain: ['5 000 kronor', '5 000 kr'],
+    // 5 000 kr is correct for Årsbokslut — only forbid if K2 amount is wrong
+    mustNotContain: ['5 000 kronor periodisera'],
   },
   {
     id: 2,
@@ -162,10 +166,29 @@ const TESTS: TestCase[] = [
   },
 ];
 
+/** Initialize session by visiting the homepage to get auth cookies */
+async function initSession(): Promise<void> {
+  // Auth.js requires a valid CSRF token for POST requests.
+  // First, hit the auth session endpoint to get a session cookie.
+  const csrfResp = await fetch(BASE_URL + '/auth/csrf', { redirect: 'follow' });
+  const cookies = csrfResp.headers.getSetCookie?.() || [];
+  sessionCookies = cookies.map(c => c.split(';')[0]).join('; ');
+
+  // If no cookies from csrf, try the session endpoint
+  if (!sessionCookies) {
+    const sessionResp = await fetch(BASE_URL + '/auth/session', { redirect: 'follow' });
+    const sCookies = sessionResp.headers.getSetCookie?.() || [];
+    sessionCookies = sCookies.map(c => c.split(';')[0]).join('; ');
+  }
+}
+
 async function askQuestion(question: string): Promise<string> {
+  const headers: Record<string, string> = { 'Content-Type': 'application/json' };
+  if (sessionCookies) headers['Cookie'] = sessionCookies;
+
   const response = await fetch(BASE_URL + '/api/chat', {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+    headers,
     body: JSON.stringify({ message: question }),
   });
 
@@ -207,6 +230,9 @@ async function runTests() {
   console.log('Target: ' + BASE_URL);
   console.log('=' .repeat(60));
   console.log('');
+
+  // Initialize session cookies (Auth.js CSRF protection)
+  await initSession();
 
   let passed = 0;
   let failed = 0;

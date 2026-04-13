@@ -59,11 +59,41 @@ export async function loadChapters(
   return limited;
 }
 
-/** Build structured facts section for the loaded chapters */
-function buildFactsSection(
+/** Build global belopp facts section — always injected regardless of routing */
+function buildGlobalFactsSection(): string {
+  const byRegulation = new Map<string, string[]>();
+
+  for (const entry of allFacts) {
+    for (const fact of entry.facts) {
+      if (fact.type !== 'belopp') continue;
+      const parts: string[] = [`punkt ${fact.punkt}`];
+      if (fact.belopp) parts.push(`belopp: ${fact.belopp}`);
+      if (fact.tid) parts.push(`tid: ${fact.tid}`);
+
+      const reg = entry.regulation;
+      if (!byRegulation.has(reg)) byRegulation.set(reg, []);
+      byRegulation.get(reg)!.push(parts.join(' — '));
+    }
+  }
+
+  if (byRegulation.size === 0) return '';
+
+  const lines: string[] = [
+    'VERIFIERADE BELOPP OCH GRÄNSVÄRDEN (uppdaterade 2025, använd dessa exakt):',
+  ];
+  for (const [reg, facts] of byRegulation) {
+    lines.push(`[${reg}]`);
+    for (const f of facts) {
+      lines.push(`• ${f}`);
+    }
+  }
+  return lines.join('\n') + '\n\n';
+}
+
+/** Build chapter-specific changed/new rules section */
+function buildChangedRulesSection(
   matches: { dir: string; file: string }[]
 ): string {
-  const beloppFacts: string[] = [];
   const changedRules: string[] = [];
 
   for (const match of matches) {
@@ -73,12 +103,7 @@ function buildFactsSection(
     if (!chapterFacts) continue;
 
     for (const fact of chapterFacts.facts) {
-      if (fact.type === 'belopp') {
-        const parts: string[] = [`${chapterFacts.regulation} punkt ${fact.punkt}`];
-        if (fact.belopp) parts.push(`belopp: ${fact.belopp}`);
-        if (fact.tid) parts.push(`tid: ${fact.tid}`);
-        beloppFacts.push(parts.join(' — '));
-      } else if (fact.type === 'new_rule') {
+      if (fact.type === 'new_rule') {
         changedRules.push(
           `${chapterFacts.regulation} punkt ${fact.punkt} [NY REGEL]: ${fact.summary.slice(0, 200)}`
         );
@@ -90,34 +115,23 @@ function buildFactsSection(
     }
   }
 
-  const sections: string[] = [];
+  if (changedRules.length === 0) return '';
 
-  if (beloppFacts.length > 0) {
-    sections.push(
-      'VERIFIERADE BELOPP (uppdaterade 2025, använd dessa exakt):',
-      ...beloppFacts.map(f => `• ${f}`),
-    );
-  }
-
-  if (changedRules.length > 0) {
-    // Limit to max 15 most relevant changed rules to avoid noise
-    const limited = changedRules.slice(0, 15);
-    sections.push(
-      '',
-      'NYLIGEN ÄNDRADE/NYA REGLER (BFNAR 2024-2025, citera dessa om relevanta):',
-      ...limited.map(f => `• ${f}`),
-    );
-  }
-
-  if (sections.length === 0) return '';
-  return sections.join('\n') + '\n\n';
+  // Limit to max 15 most relevant changed rules to avoid noise
+  const limited = changedRules.slice(0, 15);
+  const lines = [
+    'NYLIGEN ÄNDRADE/NYA REGLER (BFNAR 2024-2025, citera dessa om relevanta):',
+    ...limited.map(f => `• ${f}`),
+  ];
+  return lines.join('\n') + '\n\n';
 }
 
 export function formatContext(
   chapters: LoadedChapter[],
   matches: { dir: string; file: string }[]
 ): string {
-  const factsSection = buildFactsSection(matches);
+  const globalFacts = buildGlobalFactsSection();
+  const changedRules = buildChangedRulesSection(matches);
 
   const body = chapters
     .map(
@@ -126,5 +140,6 @@ export function formatContext(
     )
     .join('\n\n');
 
-  return factsSection + body;
+  if (!globalFacts && !changedRules && !body) return '';
+  return globalFacts + changedRules + body;
 }
