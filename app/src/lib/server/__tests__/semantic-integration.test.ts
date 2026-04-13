@@ -2,7 +2,7 @@ import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 
 // Mock $env/static/private before importing the module under test
 vi.mock('$env/static/private', () => ({
-  JINA_API_KEY: 'test-jina-key-for-testing',
+  OPENROUTER_API_KEY: 'test-openrouter-key-for-testing',
 }));
 
 import embeddingsData from '../embeddings.json';
@@ -11,24 +11,25 @@ interface StoredEmbedding {
   regulation: string;
   dir: string;
   file: string;
+  section: string;
   label: string;
-  description: string;
+  text: string;
   embedding: number[];
 }
 
-const chapters = embeddingsData as StoredEmbedding[];
+const sections = embeddingsData as StoredEmbedding[];
 
 // Pick known embeddings for mocking
-const k2Chapter2 = chapters.find(
+const k2Chapter2 = sections.find(
   (s) => s.file === '02-redovisningsprinciper.md' && s.regulation === 'K2'
 )!;
-const k2Chapter10a = chapters.find(
+const k2Chapter10a = sections.find(
   (s) => s.file.startsWith('10a-') && s.regulation === 'K2'
 )!;
 
 function mockFetchWithEmbedding(embedding: number[]) {
   return vi.fn().mockImplementation(async (url: string) => {
-    if (url.includes('api.jina.ai/v1/embeddings')) {
+    if (url.includes('openrouter.ai/api/v1/embeddings')) {
       return {
         ok: true,
         json: async () => ({ data: [{ embedding }] }),
@@ -40,7 +41,7 @@ function mockFetchWithEmbedding(embedding: number[]) {
 
 function mockFetchFailure() {
   return vi.fn().mockImplementation(async (url: string) => {
-    if (url.includes('api.jina.ai/v1/embeddings')) {
+    if (url.includes('openrouter.ai/api/v1/embeddings')) {
       return {
         ok: false,
         status: 500,
@@ -109,7 +110,7 @@ describe('routeQuestionSemantic — integration tests', () => {
 
   it('boosts K3 results when question contains "K3"', async () => {
     // Use a K3 chapter embedding
-    const k3Chapter = chapters.find((s) => s.regulation === 'K3')!;
+    const k3Chapter = sections.find((s) => s.regulation === 'K3')!;
     vi.stubGlobal('fetch', mockFetchWithEmbedding(k3Chapter.embedding));
 
     const results = await routeQuestionSemantic('avskrivning K3');
@@ -120,7 +121,7 @@ describe('routeQuestionSemantic — integration tests', () => {
 
   // ─── Test 4: Fallback on API failure ────────────────────────────
 
-  it('falls back to keyword router when Jina API returns error', async () => {
+  it('falls back to keyword router when embedding API returns error', async () => {
     vi.stubGlobal('fetch', mockFetchFailure());
 
     const results = await routeQuestionSemantic('avskrivning');
@@ -205,7 +206,7 @@ describe('routeQuestionSemantic — integration tests', () => {
 
   it('returns diverse results from multiple regulations when no preference specified', async () => {
     // Average multiple regulation embeddings to create a "neutral" query embedding
-    const k3Chapter = chapters.find((s) => s.regulation === 'K3')!;
+    const k3Chapter = sections.find((s) => s.regulation === 'K3')!;
     const avgEmbedding = k2Chapter2.embedding.map(
       (val, i) => (val + k3Chapter.embedding[i]) / 2
     );
