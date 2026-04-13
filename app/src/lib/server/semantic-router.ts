@@ -28,6 +28,51 @@ interface StoredEmbedding {
 
 const chapters: StoredEmbedding[] = embeddingsData as StoredEmbedding[];
 
+// ─── Regulation scope resolution ─────────────────────────────────
+
+export type RegulationScope = {
+  type: 'single';
+  regulation: string;
+} | {
+  type: 'comparison';
+  regulations: string[];
+} | {
+  type: 'unknown';
+};
+
+const VALID_REGULATIONS = new Set([
+  'K2', 'K3', 'Bokföring', 'Fusioner', 'BRF', 'Årsbokslut',
+  'Gränsvärden', 'K1 Enskilda', 'K1 Ideella',
+]);
+
+/** Detect regulation scope from question text (keyword-based) */
+export function detectRegulationScope(question: string): RegulationScope {
+  const q = question.toLowerCase();
+  if (/\bk2\b/.test(q) && /\bk3\b/.test(q)) {
+    return { type: 'comparison', regulations: ['K2', 'K3'] };
+  }
+  if (/\bk2\b/.test(q)) return { type: 'single', regulation: 'K2' };
+  if (/\bk3\b/.test(q)) return { type: 'single', regulation: 'K3' };
+  if (/\bfusion\b/.test(q)) return { type: 'single', regulation: 'Fusioner' };
+  if (/\bbokför/.test(q) && !/\b(års)?redovisning/.test(q)) {
+    return { type: 'single', regulation: 'Bokföring' };
+  }
+  if (/\bbrf\b/.test(q)) return { type: 'single', regulation: 'BRF' };
+  return { type: 'unknown' };
+}
+
+/** Convert a UI dropdown selection + question into a RegulationScope */
+export function resolveRegulationScope(regulation: string, question: string): RegulationScope {
+  if (regulation === 'K2K3') {
+    return { type: 'comparison', regulations: ['K2', 'K3'] };
+  }
+  if (VALID_REGULATIONS.has(regulation)) {
+    return { type: 'single', regulation };
+  }
+  // 'auto', empty, or invalid → fall back to question-based detection
+  return detectRegulationScope(question);
+}
+
 /** Compute cosine similarity between two normalized vectors (just dot product) */
 function cosineSimilarity(a: number[], b: number[]): number {
   let dot = 0;
