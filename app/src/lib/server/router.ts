@@ -191,12 +191,20 @@ function matchPunktNumber(question: string): ChapterMatch | null {
   return null;
 }
 
-export function routeQuestion(question: string): ChapterMatch[] {
+/** Parse regulation filter string into a Set of allowed regulations, or null for no filtering. */
+function parseRegulationFilter(filter?: string): Set<string> | null {
+  if (!filter || filter === 'auto') return null;
+  const regulations = filter.split(',').map((s) => s.trim()).filter(Boolean);
+  return regulations.length > 0 ? new Set(regulations) : null;
+}
+
+export function routeQuestion(question: string, regulationFilter?: string): ChapterMatch[] {
+  const allowed = parseRegulationFilter(regulationFilter);
   const results: ChapterMatch[] = [];
 
   // Layer 1: Direct punkt-number match (highest priority)
   const punktMatch = matchPunktNumber(question);
-  if (punktMatch) {
+  if (punktMatch && (!allowed || allowed.has(punktMatch.regulation))) {
     results.push(punktMatch);
   }
 
@@ -205,6 +213,8 @@ export function routeQuestion(question: string): ChapterMatch[] {
   const regPref = detectRegulationPreference(question);
 
   for (const route of ROUTES) {
+    if (allowed && !allowed.has(route.regulation)) continue;
+
     let score = 0;
     for (const keyword of route.keywords) {
       const kw = normalize(keyword);
