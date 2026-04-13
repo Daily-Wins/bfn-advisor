@@ -228,14 +228,13 @@ describe('routeQuestion', () => {
   });
 
   describe('known file reference issues', () => {
-    it('BRF route references non-existent file brf-upplysningar/02-nyckeltal.md', () => {
+    it('BRF route references file that exists on disk', () => {
       const results = routeQuestion('brf upplysning');
       expect(results.length).toBeGreaterThan(0);
       const brfResult = results.find((r) => r.dir === 'brf-upplysningar');
       expect(brfResult).toBeDefined();
-      // Document that this file does not exist on disk
       const filePath = resolve(KNOWLEDGE_BASE, brfResult!.dir, brfResult!.file);
-      expect(existsSync(filePath)).toBe(false);
+      expect(existsSync(filePath)).toBe(true);
     });
   });
 

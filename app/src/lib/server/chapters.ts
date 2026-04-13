@@ -1,8 +1,18 @@
 import { readFile } from 'fs/promises';
 import { join } from 'path';
+import { existsSync } from 'fs';
 import factsData from './facts.json';
 
-const KNOWLEDGE_BASE_ROOT = join(process.cwd(), 'knowledge');
+function findKnowledgeRoot(): string {
+  // Works from both app/ (production) and repo root (tests)
+  const candidates = [
+    join(process.cwd(), 'knowledge'),
+    join(process.cwd(), 'app', 'knowledge'),
+  ];
+  return candidates.find(p => existsSync(p)) || candidates[0];
+}
+
+const KNOWLEDGE_BASE_ROOT = findKnowledgeRoot();
 
 interface LoadedChapter {
   regulation: string;
