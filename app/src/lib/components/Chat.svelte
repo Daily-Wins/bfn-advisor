@@ -1,5 +1,6 @@
 <script lang="ts">
   import Message from './Message.svelte';
+  import RegulationSelect from './RegulationSelect.svelte';
   import { signIn } from '@auth/sveltekit/client';
 
   interface ChatMessage {
@@ -18,6 +19,7 @@
 
   let messages: ChatMessage[] = $state([]);
   let input = $state('');
+  let selectedRegulation = $state('auto');
   let isStreaming = $state(false);
   let questionOffset = $state(0);
   let localQuestionsRemaining = $derived(
@@ -81,7 +83,7 @@
       const response = await fetch('/api/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ message: msg, history }),
+        body: JSON.stringify({ message: msg, history, regulation: selectedRegulation }),
       });
 
       if (!response.ok) {
@@ -278,6 +280,9 @@
           {localQuestionsRemaining} av 5 gratisfrågor kvar
         </p>
       {/if}
+      <div class="mb-2">
+        <RegulationSelect bind:selected={selectedRegulation} />
+      </div>
       <form class="flex gap-3" onsubmit={(e) => { e.preventDefault(); send(); }}>
         <label for="chat-input" class="sr-only">Ställ en fråga om K2, K3, bokföring</label>
         <input
