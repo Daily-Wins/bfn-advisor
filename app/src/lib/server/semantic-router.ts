@@ -173,6 +173,37 @@ function reciprocalRankFusion(
     .map(v => ({ ...v.match, score: v.score }));
 }
 
+// ─── Regulation scope resolution (used by API endpoint) ──────────
+
+export type RegulationScope =
+  | { type: 'single'; regulation: string }
+  | { type: 'comparison'; regulations: string[] }
+  | { type: 'auto' };
+
+const VALID_REGULATIONS = new Set([
+  'K2', 'K3', 'Bokföring', 'Fusioner', 'BRF', 'Årsbokslut',
+  'Gränsvärden', 'K1 Enskilda', 'K1 Ideella',
+]);
+
+export function resolveScope(regulation: string): RegulationScope {
+  if (regulation === 'K2K3') return { type: 'comparison', regulations: ['K2', 'K3'] };
+  if (VALID_REGULATIONS.has(regulation)) return { type: 'single', regulation };
+  return { type: 'auto' };
+}
+
+export function filterMatchesByScope(matches: ChapterMatch[], scope: RegulationScope): ChapterMatch[] {
+  if (scope.type === 'auto') return matches;
+  if (scope.type === 'single') {
+    const filtered = matches.filter(m => m.regulation === scope.regulation);
+    return filtered.length > 0 ? filtered : matches;
+  }
+  if (scope.type === 'comparison') {
+    const filtered = matches.filter(m => scope.regulations.includes(m.regulation));
+    return filtered.length > 0 ? filtered : matches;
+  }
+  return matches;
+}
+
 export async function routeQuestionSemantic(question: string): Promise<ChapterMatch[]> {
   const results: ChapterMatch[] = [];
 

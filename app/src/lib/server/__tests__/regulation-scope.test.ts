@@ -1,5 +1,8 @@
-import { describe, it, expect } from 'vitest';
-import { resolveScope, filterMatchesByScope } from '../../../routes/api/chat/+server';
+import { describe, it, expect, vi } from 'vitest';
+
+vi.mock('$env/static/private', () => ({ OPENROUTER_API_KEY: 'test' }));
+
+import { resolveScope, filterMatchesByScope } from '../semantic-router';
 import type { ChapterMatch } from '../semantic-router';
 
 function makeMatch(regulation: string, file: string): ChapterMatch {
