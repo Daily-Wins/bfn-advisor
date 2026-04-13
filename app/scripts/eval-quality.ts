@@ -31,6 +31,7 @@ interface EvalCase {
   groundTruth: string;        // Expert reference answer (key facts)
   requiredPunkts: string[];   // Punkt numbers that MUST be cited
   forbiddenClaims: string[];  // Statements that indicate hallucination
+  regulation: string;         // Regulation to send with the question
 }
 
 const EVAL_SET: EvalCase[] = [
@@ -41,6 +42,7 @@ const EVAL_SET: EvalCase[] = [
     groundTruth: `Nej, du behöver inte periodisera. Enligt K2 punkt 2.4 behöver ett företag inte periodisera inkomster och utgifter som understiger 7 000 kronor. Eftersom fakturan är på 4 000 kr understiger den gränsen. Detta är ett allmänt råd (bindande). Gränsen gäller per faktura/post, inte totalt.`,
     requiredPunkts: ['2.4'],
     forbiddenClaims: ['5 000 kronor', 'halva prisbasbeloppet'],
+    regulation: 'K2',
   },
   {
     id: 2,
@@ -49,6 +51,7 @@ const EVAL_SET: EvalCase[] = [
     groundTruth: `Inventarier skrivs av linjärt över nyttjandeperioden enligt K2 punkt 10.25. Nyttjandeperioden bestäms individuellt men får som schablon sättas till 5 år (punkt 10.27). Avskrivning ska påbörjas den månad tillgången tas i bruk. Inventarier av mindre värde (under ett halvt prisbasbelopp, punkt 10.5) får kostnadsföras direkt.`,
     requiredPunkts: ['10.25', '10.27'],
     forbiddenClaims: ['komponentavskrivning'],
+    regulation: 'K2',
   },
   {
     id: 3,
@@ -57,6 +60,7 @@ const EVAL_SET: EvalCase[] = [
     groundTruth: `I K2 redovisas alla leasingavtal som operationella — leasingavgiften kostnadsförs linjärt. I K3 (kapitel 20) klassificeras leasing som finansiell eller operationell. Finansiell leasing redovisas som tillgång och skuld i balansräkningen hos leasetagaren, med avskrivning och ränta. Operationell leasing kostnadsförs linjärt även i K3.`,
     requiredPunkts: [],
     forbiddenClaims: [],
+    regulation: 'K2K3',
   },
   {
     id: 4,
@@ -65,6 +69,7 @@ const EVAL_SET: EvalCase[] = [
     groundTruth: `Vid fusion av helägt dotterbolag (absorption) övertar moderbolaget alla tillgångar och skulder. Enligt BFNAR 2020:5 värderas övertagna tillgångar och skulder till koncernmässiga värden. Fusionsdifferensen (skillnad mellan andelarnas redovisade värde och nettotillgångarna) redovisas mot eget kapital. Fusionen redovisas på den dag registrering sker.`,
     requiredPunkts: [],
     forbiddenClaims: ['kapitel 37', 'K3 kapitel 37'],
+    regulation: 'Fusioner',
   },
   {
     id: 5,
@@ -73,6 +78,7 @@ const EVAL_SET: EvalCase[] = [
     groundTruth: `Räkenskapsinformation ska bevaras i 7 år efter utgången av det kalenderår då räkenskapsåret avslutades, enligt 7 kap. 2 § bokföringslagen (BFL). Informationen ska vara tillgänglig i Sverige och bevaras i varaktigt läsbar form.`,
     requiredPunkts: [],
     forbiddenClaims: ['10 år', '5 år'],
+    regulation: 'Bokföring',
   },
   {
     id: 6,
@@ -81,6 +87,7 @@ const EVAL_SET: EvalCase[] = [
     groundTruth: `Enligt BFNAR 2023:1 ska en bostadsrättsförening redovisa fem nyckeltal: (1) årsavgift per kvadratmeter, (2) skuldsättning per kvadratmeter, (3) sparande per kvadratmeter, (4) räntekänslighet, (5) energikostnad per kvadratmeter. Nyckeltalen ska redovisas i förvaltningsberättelsen som flerårsöversikt.`,
     requiredPunkts: [],
     forbiddenClaims: [],
+    regulation: 'BRF',
   },
   {
     id: 7,
@@ -89,6 +96,7 @@ const EVAL_SET: EvalCase[] = [
     groundTruth: `Ett företag som överskrider minst två av tre gränsvärden under vart och ett av de två senaste räkenskapsåren räknas som större och måste använda K3: (1) medelantal anställda > 50, (2) balansomslutning > 40 miljoner kr, (3) nettoomsättning > 80 miljoner kr. Mindre företag kan välja K2 eller K3.`,
     requiredPunkts: [],
     forbiddenClaims: ['25 anställda'],
+    regulation: 'Gränsvärden',
   },
   {
     id: 8,
@@ -97,6 +105,7 @@ const EVAL_SET: EvalCase[] = [
     groundTruth: `Enligt K2 punkt 10.5 får inventarier av mindre värde kostnadsföras direkt om anskaffningsvärdet understiger ett halvt prisbasbelopp med tillägg för ej avdragsgill moms. Prisbasbeloppet 2025 är 58 800 kr, så gränsen är 29 400 kr. Gäller per tillgång, men tillgångar som ingår i en större investering eller har naturligt samband ska bedömas sammantaget.`,
     requiredPunkts: ['10.5'],
     forbiddenClaims: ['25 000 kronor'],
+    regulation: 'K2',
   },
   {
     id: 9,
@@ -105,6 +114,7 @@ const EVAL_SET: EvalCase[] = [
     groundTruth: `Enligt K2 punkt 2.11 ska händelser efter balansdagen som bekräftar förhållanden som förelåg på balansdagen beaktas. Punkt 2.11A anger att händelser som inte bekräftar förhållanden på balansdagen inte ska påverka resultat- eller balansräkningen men kan behöva upplysas om i förvaltningsberättelsen.`,
     requiredPunkts: ['2.11'],
     forbiddenClaims: [],
+    regulation: 'K2',
   },
   {
     id: 10,
@@ -113,6 +123,7 @@ const EVAL_SET: EvalCase[] = [
     groundTruth: `K2 tillåter inte redovisning av uppskjuten skatt. Uppskjuten skatt är ett K3-koncept (kapitel 29). I K2 redovisas enbart aktuell skatt. Obeskattade reserver redovisas brutto i K2 (utan uppdelning i uppskjuten skatteskuld och eget kapital).`,
     requiredPunkts: [],
     forbiddenClaims: ['punkt 29', 'temporär skillnad'],
+    regulation: 'K2',
   },
   {
     id: 11,
@@ -121,6 +132,7 @@ const EVAL_SET: EvalCase[] = [
     groundTruth: `I K2 är det som huvudregel inte tillåtet att aktivera egenupparbetade immateriella tillgångar — de ska kostnadsföras. I K3 (kapitel 18) kan egenupparbetade immateriella tillgångar aktiveras om utvecklingsutgifterna uppfyller sex specifika kriterier i punkt 18.12 (bl.a. teknisk genomförbarhet, avsikt att slutföra, förmåga att använda/sälja).`,
     requiredPunkts: [],
     forbiddenClaims: [],
+    regulation: 'K2K3',
   },
   {
     id: 12,
@@ -129,6 +141,7 @@ const EVAL_SET: EvalCase[] = [
     groundTruth: `Enligt K2 punkt 11.20 behöver nedskrivning inte göras om värdenedgången understiger det lägsta av 25 000 kronor och 10 procent av eget kapital vid årets ingång. Men nedskrivning ska alltid göras om det sammanlagda värdet på alla finansiella anläggningstillgångar understiger redovisat värde med mer än dessa gränser. Grundregeln i ÅRL 4 kap 5 § är att nedskrivning ska ske om värdenedgången kan antas vara bestående, men K2 ger en förenklingsregel med fasta gränsvärden.`,
     requiredPunkts: ['11.20'],
     forbiddenClaims: [],
+    regulation: 'K2',
   },
   {
     id: 13,
@@ -137,6 +150,7 @@ const EVAL_SET: EvalCase[] = [
     groundTruth: `Enligt K2 kapitel 19 redovisas koncernbidrag som lämnas som en kostnad och koncernbidrag som erhålls som en intäkt. Mottagande företag redovisar det som bokslutsdisposition. Koncernbidraget ska redovisas samma räkenskapsår som det avser.`,
     requiredPunkts: [],
     forbiddenClaims: [],
+    regulation: 'K2',
   },
   {
     id: 14,
@@ -145,6 +159,7 @@ const EVAL_SET: EvalCase[] = [
     groundTruth: `Enligt K2 punkt 16.6 behöver ett företag inte göra en avsättning om det sammanlagda beloppet av samtliga avsättningar inte överstiger 25 000 kr. Om den enda avsättningen är 20 000 kr (under gränsen) behöver den inte redovisas separat.`,
     requiredPunkts: ['16.6'],
     forbiddenClaims: [],
+    regulation: 'K2',
   },
   {
     id: 15,
@@ -153,6 +168,7 @@ const EVAL_SET: EvalCase[] = [
     groundTruth: `Enligt K3 kapitel 17 ska materiella anläggningstillgångar delas upp i komponenter med väsentligt olika nyttjandeperioder, och varje komponent ska skrivas av separat. Typiskt exempel: en byggnad delas i stomme, tak, fasad, installationer etc. Vid utbyte av en komponent utrangeras den gamla och den nya aktiveras. Nyttjandeperiod och avskrivningsmetod ska omprövas om förutsättningarna förändras.`,
     requiredPunkts: [],
     forbiddenClaims: [],
+    regulation: 'K3',
   },
 ];
 
@@ -210,14 +226,14 @@ async function initSession(): Promise<void> {
   }
 }
 
-async function askQuestion(question: string): Promise<{ text: string; sources: string[] }> {
+async function askQuestion(question: string, regulation: string = 'auto'): Promise<{ text: string; sources: string[] }> {
   const headers: Record<string, string> = { 'Content-Type': 'application/json' };
   if (sessionCookies && sessionCookies.length > 0) headers['Cookie'] = sessionCookies;
 
   const response = await fetch(BASE_URL + '/api/chat', {
     method: 'POST',
     headers,
-    body: JSON.stringify({ message: question }),
+    body: JSON.stringify({ message: question, regulation }),
   });
 
   if (!response.ok) {
@@ -331,10 +347,10 @@ async function runEval() {
   const errors: string[] = [];
 
   for (const evalCase of EVAL_SET) {
-    process.stdout.write(`[${evalCase.id}/${EVAL_SET.length}] ${evalCase.name} ... `);
+    process.stdout.write(`[${evalCase.id}/${EVAL_SET.length}] ${evalCase.name} [${evalCase.regulation}] ... `);
 
     try {
-      const answer = await askQuestion(evalCase.question);
+      const answer = await askQuestion(evalCase.question, evalCase.regulation);
       const scores = await judgeAnswer(evalCase.question, answer.text, evalCase);
 
       const avg = (scores.correctness + scores.citations + scores.hallucination + scores.completeness) / 4;
