@@ -35,27 +35,6 @@ export async function incrementAnonymousCount(id: string): Promise<void> {
   });
 }
 
-export async function getSessionUser(
-  sessionId: string
-): Promise<{ id: string; email: string } | null> {
-  const db = getDb();
-
-  const result = await db.execute({
-    sql: 'SELECT users.id, users.email FROM sessions JOIN users ON sessions.user_id = users.id WHERE sessions.id = ? AND sessions.expires_at > datetime(\'now\')',
-    args: [sessionId],
-  });
-
-  if (result.rows.length === 0) {
-    return null;
-  }
-
-  const row = result.rows[0];
-  return {
-    id: row['id'] as string,
-    email: row['email'] as string,
-  };
-}
-
 export async function recordUserQuestion(
   userId: string,
   question: string,
