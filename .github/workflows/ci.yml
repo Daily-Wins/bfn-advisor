@@ -1,0 +1,58 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: app
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: app/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Sync SvelteKit
+        run: npx svelte-kit sync
+
+      - name: Type check
+        run: npm run check
+
+      - name: Unit tests
+        run: npx vitest run
+        env:
+          OPENROUTER_API_KEY: dummy
+          TURSO_DATABASE_URL: 'file::memory:'
+          TURSO_AUTH_TOKEN: dummy
+          AUTH_AUTH0_ID: dummy
+          AUTH_AUTH0_SECRET: dummy
+          AUTH_AUTH0_ISSUER: https://example.auth0.com
+          AUTH_SECRET: dummy-secret-at-least-32-chars-long
+
+      - name: Build
+        run: npm run build
+        env:
+          OPENROUTER_API_KEY: dummy
+          TURSO_DATABASE_URL: 'file::memory:'
+          TURSO_AUTH_TOKEN: dummy
+          AUTH_AUTH0_ID: dummy
+          AUTH_AUTH0_SECRET: dummy
+          AUTH_AUTH0_ISSUER: https://example.auth0.com
+          AUTH_SECRET: dummy-secret-at-least-32-chars-long
