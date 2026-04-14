@@ -8,7 +8,9 @@ const BASE_RULES = `REGLER:
 3. Om du inte hittar en specifik punkt i texten, säg det — gissa aldrig punktnummer.
 4. Belopp och gränsvärden i texten nedan är UPPDATERADE (2025). Om du minns ett annat belopp från din träning, lita på texten nedan.
 5. Ange regeltyp: lagtext (tvingande), allmänt råd (bindande), kommentar (vägledande).
-6. Svara koncist på svenska. Använd rubriker och punktlistor.`;
+6. Svara koncist på svenska. Använd rubriker och punktlistor.
+7. STRIKT KÄLLBINDNING: Citera ENDAST punktnummer som förekommer ordagrant i KONTEXT-sektionen nedan. Om ett punktnummer du vill citera inte finns i KONTEXT — cite det inte. Hitta aldrig på punktnummer, även om du "minns" dem från din träning.
+8. INGET UTANFÖR KONTEXT: Nämn inte regler, belopp, nyckeltal eller principer som inte finns i KONTEXT. Om frågan berör något som inte täcks av KONTEXT, säg tydligt "Detta omfattas inte av den hämtade regeltexten — jag kan inte svara säkert."`;
 
 const REGULATION_INSTRUCTIONS: Record<string, string> = {
   'K2': `Du svarar ENBART utifrån K2-regelverket (BFNAR 2016:10). Nämn INTE K3-regler om inte användaren uttryckligen ber om jämförelse. Kontrollera särskilda regler per företagsform.`,
@@ -40,12 +42,38 @@ interface ChatMessage {
   content: string;
 }
 
+export interface ChatCompletionRequest {
+  model: string;
+  messages: Array<{ role: 'system' | 'user' | 'assistant'; content: string }>;
+  stream: boolean;
+  max_tokens: number;
+  temperature: number;
+}
+
+export function buildCompletionRequest(
+  context: string,
+  messages: ChatMessage[],
+  regulation: string = 'auto',
+): ChatCompletionRequest {
+  const systemMessage = buildSystemPrompt(regulation, context);
+  return {
+    model: LLM_MODEL,
+    messages: [
+      { role: 'system', content: systemMessage },
+      ...messages,
+    ],
+    stream: true,
+    max_tokens: 2048,
+    temperature: 0,
+  };
+}
+
 export async function streamCompletion(
   context: string,
   messages: ChatMessage[],
   regulation: string = 'auto',
 ): Promise<ReadableStream> {
-  const systemMessage = buildSystemPrompt(regulation, context);
+  const body = buildCompletionRequest(context, messages, regulation);
 
   const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
     method: 'POST',
@@ -55,16 +83,7 @@ export async function streamCompletion(
       'HTTP-Referer': 'https://k2k3.ai',
       'X-Title': 'K2K3.ai',
     },
-    body: JSON.stringify({
-      model: LLM_MODEL,
-      messages: [
-        { role: 'system', content: systemMessage },
-        ...messages,
-      ],
-      stream: true,
-      max_tokens: 2048,
-      temperature: 0,
-    }),
+    body: JSON.stringify(body),
   });
 
   if (!response.ok) {
