@@ -24,7 +24,6 @@
 		"@auth/core": "^0.41.1",
 		"@auth/sveltekit": "^1.11.1",
 		"@libsql/client": "^0.17.2",
-		"@node-rs/argon2": "^2.0.2",
 		"@sveltejs/adapter-vercel": "^6.3.3",
 		"@tailwindcss/vite": "^4.2.2",
 		"marked": "^17.0.5",
