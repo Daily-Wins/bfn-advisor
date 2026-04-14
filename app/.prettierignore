@@ -1,0 +1,9 @@
+.svelte-kit
+build
+node_modules
+.vercel
+package-lock.json
+data/
+knowledge/
+src/lib/server/embeddings.json
+src/lib/server/facts.json
