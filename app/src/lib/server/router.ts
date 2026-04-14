@@ -7,13 +7,8 @@
  * 3. Keyword scoring: weighted keyword matching across all chapters
  */
 
-export interface ChapterMatch {
-  regulation: string;
-  dir: string;
-  file: string;
-  score: number;
-  label: string;
-}
+import type { ChapterMatch } from './types';
+export type { ChapterMatch };
 
 interface RouteEntry {
   keywords: string[];

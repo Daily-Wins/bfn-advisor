@@ -2,7 +2,8 @@
  * Semantic router using pre-computed section-level embeddings.
  *
  * Computes query embedding at runtime via OpenRouter bge-m3, then
- * cosine similarity against pre-computed section embeddings.
+ * cosine similarity against pre-computed section embeddings that are
+ * lazy-loaded from Turso (table: chapter_embeddings).
  * Results are fused with keyword router via Reciprocal Rank Fusion (RRF).
  *
  * Latency: ~200-400ms for OpenRouter embedding call (keyword router runs in parallel for free)
@@ -10,16 +11,10 @@
 
 import { OPENROUTER_API_KEY } from '$env/static/private';
 import { routeQuestion } from './router';
-import embeddingsData from './embeddings.json';
+import { getDb } from './db';
+import type { ChapterMatch } from './types';
 
-export interface ChapterMatch {
-  regulation: string;
-  dir: string;
-  file: string;
-  score: number;
-  label: string;
-  section?: string;
-}
+export type { ChapterMatch };
 
 interface StoredEmbedding {
   regulation: string;
@@ -31,7 +26,26 @@ interface StoredEmbedding {
   embedding: number[];
 }
 
-const sections: StoredEmbedding[] = embeddingsData as StoredEmbedding[];
+let _embeddings: StoredEmbedding[] | null = null;
+
+/** Lazy-load all embeddings from Turso on first call. */
+async function getEmbeddings(): Promise<StoredEmbedding[]> {
+  if (_embeddings) return _embeddings;
+  const db = getDb();
+  const result = await db.execute(
+    'SELECT regulation, dir, file, section, label, text, embedding FROM chapter_embeddings',
+  );
+  _embeddings = result.rows.map((r) => ({
+    regulation: r['regulation'] as string,
+    dir: r['dir'] as string,
+    file: r['file'] as string,
+    section: r['section'] as string,
+    label: r['label'] as string,
+    text: r['text'] as string,
+    embedding: JSON.parse(r['embedding'] as string) as number[],
+  }));
+  return _embeddings;
+}
 
 /** Compute cosine similarity between two vectors */
 function cosineSimilarity(a: number[], b: number[]): number {
@@ -81,13 +95,14 @@ function detectRegulationBoost(question: string): string | null {
 }
 
 /** Direct punkt-number lookup */
-function matchPunktDirect(question: string): ChapterMatch | null {
+async function matchPunktDirect(question: string): Promise<ChapterMatch | null> {
   const match = question.match(/punkt\s+(\d+)\.(\d+)/i);
   if (!match) return null;
 
   const chapterNum = parseInt(match[1]);
   const padded = chapterNum.toString().padStart(2, '0');
 
+  const sections = await getEmbeddings();
   // Find any section from the matching chapter file
   const sectionMatch = sections.find(s =>
     s.regulation === 'K2' && (
@@ -111,7 +126,10 @@ function matchPunktDirect(question: string): ChapterMatch | null {
 
 /** Get semantic search results (section-level) */
 async function getSemanticResults(question: string): Promise<ChapterMatch[]> {
-  const queryEmbedding = await getQueryEmbedding(question);
+  const [queryEmbedding, sections] = await Promise.all([
+    getQueryEmbedding(question),
+    getEmbeddings(),
+  ]);
   const regBoost = detectRegulationBoost(question);
 
   const scored = sections.map(s => {
@@ -208,7 +226,7 @@ export async function routeQuestionSemantic(question: string): Promise<ChapterMa
   const results: ChapterMatch[] = [];
 
   // Layer 1: Direct punkt-number match (highest priority)
-  const punktMatch = matchPunktDirect(question);
+  const punktMatch = await matchPunktDirect(question);
   if (punktMatch) {
     results.push(punktMatch);
   }

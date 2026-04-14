@@ -1,11 +1,11 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
+import { readFileSync } from 'fs';
+import { resolve } from 'path';
 
 // Mock $env/static/private before importing the module under test
 vi.mock('$env/static/private', () => ({
   OPENROUTER_API_KEY: 'test-openrouter-key-for-testing',
 }));
-
-import embeddingsData from '../embeddings.json';
 
 interface StoredEmbedding {
   regulation: string;
@@ -17,7 +17,28 @@ interface StoredEmbedding {
   embedding: number[];
 }
 
-const sections = embeddingsData as StoredEmbedding[];
+// Load embeddings from the seed source (outside src/ so Vite doesn't bundle it).
+const embeddingsPath = resolve(__dirname, '../../../../data/embeddings.json');
+const embeddingsData = JSON.parse(readFileSync(embeddingsPath, 'utf-8')) as StoredEmbedding[];
+const sections = embeddingsData;
+
+// Mock the Turso-backed getDb used by semantic-router so getEmbeddings()
+// returns the seed JSON without hitting a real database.
+vi.mock('../db', () => ({
+  getDb: () => ({
+    execute: async () => ({
+      rows: sections.map((s) => ({
+        regulation: s.regulation,
+        dir: s.dir,
+        file: s.file,
+        section: s.section,
+        label: s.label,
+        text: s.text,
+        embedding: JSON.stringify(s.embedding),
+      })),
+    }),
+  }),
+}));
 
 // Pick known embeddings for mocking
 const k2Chapter2 = sections.find(
