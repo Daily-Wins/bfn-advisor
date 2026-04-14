@@ -2,6 +2,7 @@
   import Message from './Message.svelte';
   import RegulationSelect from './RegulationSelect.svelte';
   import { signIn } from '@auth/sveltekit/client';
+  import { parseSSE } from '$lib/sse-parser';
 
   interface ChatMessage {
     role: 'user' | 'assistant';
@@ -100,33 +101,21 @@
       }
 
       const reader = response.body!.getReader();
-      const decoder = new TextDecoder();
-      let buffer = '';
 
-      while (true) {
-        const { done, value } = await reader.read();
-        if (done) break;
-
-        buffer += decoder.decode(value, { stream: true });
-        const lines = buffer.split('\n');
-        buffer = lines.pop() || '';
-
-        for (const line of lines) {
-          if (!line.startsWith('data: ')) continue;
-          try {
-            const data = JSON.parse(line.slice(6));
-            if (data.content) {
-              messages[assistantIdx].content += data.content;
-              messages = [...messages]; // trigger reactivity
-              scrollToBottom();
-            }
-            if (data.done && data.sources) {
-              messages[assistantIdx].sources = data.sources;
-              messages = [...messages];
-            }
-          } catch {
-            // Skip
+      for await (const payload of parseSSE(reader)) {
+        try {
+          const data = JSON.parse(payload);
+          if (data.content) {
+            messages[assistantIdx].content += data.content;
+            messages = [...messages]; // trigger reactivity
+            scrollToBottom();
           }
+          if (data.done && data.sources) {
+            messages[assistantIdx].sources = data.sources;
+            messages = [...messages];
+          }
+        } catch {
+          // Skip
         }
       }
 

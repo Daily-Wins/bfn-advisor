@@ -10,6 +10,8 @@
  * Output: per-question scores + aggregate quality metrics.
  */
 
+import { parseSSE } from '../src/lib/sse-parser';
+
 const OPENROUTER_API_KEY = process.env.OPENROUTER_API_KEY;
 if (!OPENROUTER_API_KEY) {
   console.error('Missing OPENROUTER_API_KEY environment variable');
@@ -241,25 +243,15 @@ async function askQuestion(question: string, regulation: string = 'auto'): Promi
   }
 
   const reader = response.body!.getReader();
-  const decoder = new TextDecoder();
   let fullText = '';
   let sources: string[] = [];
-  let buffer = '';
 
-  while (true) {
-    const { done, value } = await reader.read();
-    if (done) break;
-    buffer += decoder.decode(value, { stream: true });
-    const lines = buffer.split('\n');
-    buffer = lines.pop() || '';
-    for (const line of lines) {
-      if (!line.startsWith('data: ')) continue;
-      try {
-        const data = JSON.parse(line.slice(6));
-        if (data.content) fullText += data.content;
-        if (data.done && Array.isArray(data.sources)) sources = data.sources;
-      } catch { /* skip */ }
-    }
+  for await (const payload of parseSSE(reader)) {
+    try {
+      const data = JSON.parse(payload);
+      if (data.content) fullText += data.content;
+      if (data.done && Array.isArray(data.sources)) sources = data.sources;
+    } catch { /* skip */ }
   }
 
   return { text: fullText, sources };
