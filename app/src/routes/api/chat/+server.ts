@@ -5,6 +5,7 @@ import { loadChapters, formatContext } from '$lib/server/chapters';
 import { streamCompletion } from '$lib/server/ai';
 import { incrementAnonymousCount, recordUserQuestion } from '$lib/server/queries';
 import { parseSSE } from '$lib/sse-parser';
+import { extractPunktCitations, verifyCitations } from '$lib/server/citation-verifier';
 
 const VALID_REGULATIONS = new Set([
   'auto', 'K2', 'K3', 'K2K3', 'Bokföring', 'Fusioner', 'BRF',
@@ -77,13 +78,20 @@ export const POST: RequestHandler = async ({ request, locals }) => {
     async start(controller) {
       const reader = upstreamBody.getReader();
       const encoder = new TextEncoder();
+      let fullResponse = '';
 
       try {
         for await (const data of parseSSE(reader)) {
           if (data === '[DONE]') {
+            const citations = extractPunktCitations(fullResponse);
+            const { invalid } = verifyCitations(citations, context);
             controller.enqueue(
               encoder.encode(
-                `data: ${JSON.stringify({ done: true, sources: matches.map((m) => m.label) })}\n\n`
+                `data: ${JSON.stringify({
+                  done: true,
+                  sources: matches.map((m) => m.label),
+                  invalid_citations: invalid,
+                })}\n\n`
               )
             );
             controller.close();
@@ -93,6 +101,7 @@ export const POST: RequestHandler = async ({ request, locals }) => {
             const parsed = JSON.parse(data);
             const content = parsed.choices?.[0]?.delta?.content;
             if (content) {
+              fullResponse += content;
               controller.enqueue(
                 encoder.encode(`data: ${JSON.stringify({ content })}\n\n`)
               );
