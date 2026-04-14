@@ -27,6 +27,26 @@ describe('buildSystemPrompt', () => {
       const prompt = buildSystemPrompt(reg, 'my special context');
       expect(prompt).toContain('my special context');
     });
+
+    it.each(regulations)('%s prompt contains "STRIKT KÄLLBINDNING"', (reg) => {
+      const prompt = buildSystemPrompt(reg, 'test context');
+      expect(prompt).toContain('STRIKT KÄLLBINDNING');
+    });
+
+    it.each(regulations)('%s prompt contains "INGET UTANFÖR KONTEXT"', (reg) => {
+      const prompt = buildSystemPrompt(reg, 'test context');
+      expect(prompt).toContain('INGET UTANFÖR KONTEXT');
+    });
+
+    it.each(regulations)('%s prompt retains existing rules 1-6', (reg) => {
+      const prompt = buildSystemPrompt(reg, 'test context');
+      expect(prompt).toContain('EXAKTA utdrag ur BFN:s regelverk');
+      expect(prompt).toContain('Citera exakt punktnummer');
+      expect(prompt).toContain('gissa aldrig punktnummer');
+      expect(prompt).toContain('UPPDATERADE (2025)');
+      expect(prompt).toContain('lagtext (tvingande)');
+      expect(prompt).toContain('koncist på svenska');
+    });
   });
 
   describe('K2-specific', () => {
