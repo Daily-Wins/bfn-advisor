@@ -10,7 +10,8 @@
 		"prepare": "svelte-kit sync || echo ''",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
-		"seed:embeddings": "tsx scripts/seed-embeddings.ts"
+		"seed:embeddings": "tsx scripts/seed-embeddings.ts",
+		"migrate:rate-limit": "tsx scripts/migrate-rate-limit.ts"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^7.0.1",
