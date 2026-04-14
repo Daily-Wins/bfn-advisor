@@ -63,7 +63,7 @@ export const POST: RequestHandler = async ({ request, locals }) => {
   ];
 
   // Stream AI response
-  const upstreamBody = await streamCompletion(context, messages);
+  const upstreamBody = await streamCompletion(context, messages, regulation);
 
   // Track usage statistics
   if (!locals.user) {

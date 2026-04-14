@@ -2,7 +2,7 @@ import { describe, it, expect, vi } from 'vitest';
 
 vi.mock('$env/static/private', () => ({ OPENROUTER_API_KEY: 'test' }));
 
-import { buildSystemPrompt } from '../ai';
+import { buildSystemPrompt, buildCompletionRequest, LLM_MODEL } from '../ai';
 
 describe('buildSystemPrompt', () => {
   describe('base rules present in all prompts', () => {
@@ -26,6 +26,26 @@ describe('buildSystemPrompt', () => {
     it.each(regulations)('%s prompt contains the provided context', (reg) => {
       const prompt = buildSystemPrompt(reg, 'my special context');
       expect(prompt).toContain('my special context');
+    });
+
+    it.each(regulations)('%s prompt contains "STRIKT KÄLLBINDNING"', (reg) => {
+      const prompt = buildSystemPrompt(reg, 'test context');
+      expect(prompt).toContain('STRIKT KÄLLBINDNING');
+    });
+
+    it.each(regulations)('%s prompt contains "INGET UTANFÖR KONTEXT"', (reg) => {
+      const prompt = buildSystemPrompt(reg, 'test context');
+      expect(prompt).toContain('INGET UTANFÖR KONTEXT');
+    });
+
+    it.each(regulations)('%s prompt retains existing rules 1-6', (reg) => {
+      const prompt = buildSystemPrompt(reg, 'test context');
+      expect(prompt).toContain('EXAKTA utdrag ur BFN:s regelverk');
+      expect(prompt).toContain('Citera exakt punktnummer');
+      expect(prompt).toContain('gissa aldrig punktnummer');
+      expect(prompt).toContain('UPPDATERADE (2025)');
+      expect(prompt).toContain('lagtext (tvingande)');
+      expect(prompt).toContain('koncist på svenska');
     });
   });
 
@@ -87,6 +107,55 @@ describe('buildSystemPrompt', () => {
       const prompt = buildSystemPrompt('auto', 'ctx');
       expect(typeof prompt).toBe('string');
       expect(prompt).toContain('Citera exakt punktnummer');
+    });
+  });
+
+  describe('buildCompletionRequest', () => {
+    const msgs = [{ role: 'user' as const, content: 'Hur fungerar periodisering?' }];
+
+    it('K2 system message contains K2-regelverket', () => {
+      const req = buildCompletionRequest('ctx', msgs, 'K2');
+      const system = req.messages[0];
+      expect(system.role).toBe('system');
+      expect(system.content).toContain('K2-regelverket');
+    });
+
+    it('K3 system message contains K3-regelverket', () => {
+      const req = buildCompletionRequest('ctx', msgs, 'K3');
+      expect(req.messages[0].content).toContain('K3-regelverket');
+    });
+
+    it('auto system message contains generic instructions', () => {
+      const req = buildCompletionRequest('ctx', msgs, 'auto');
+      expect(req.messages[0].content).toContain('jämförelse K2/K3');
+    });
+
+    it('default (no regulation) behaves like auto', () => {
+      const req = buildCompletionRequest('ctx', msgs);
+      expect(req.messages[0].content).toContain('jämförelse K2/K3');
+    });
+
+    it('temperature is 0', () => {
+      const req = buildCompletionRequest('ctx', msgs, 'K2');
+      expect(req.temperature).toBe(0);
+    });
+
+    it('model is anthropic/claude-sonnet-4.6', () => {
+      const req = buildCompletionRequest('ctx', msgs, 'K2');
+      expect(req.model).toBe('anthropic/claude-sonnet-4.6');
+      expect(req.model).toBe(LLM_MODEL);
+    });
+
+    it('preserves user messages after system message', () => {
+      const req = buildCompletionRequest('ctx', msgs, 'K2');
+      expect(req.messages).toHaveLength(2);
+      expect(req.messages[1]).toEqual(msgs[0]);
+    });
+
+    it('stream is true and max_tokens is 2048', () => {
+      const req = buildCompletionRequest('ctx', msgs, 'K2');
+      expect(req.stream).toBe(true);
+      expect(req.max_tokens).toBe(2048);
     });
   });
 
