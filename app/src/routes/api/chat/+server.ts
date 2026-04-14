@@ -4,12 +4,29 @@ import { routeQuestionSemantic, resolveScope, filterMatchesByScope } from '$lib/
 import { loadChapters, formatContext } from '$lib/server/chapters';
 import { streamCompletion } from '$lib/server/ai';
 import { incrementAnonymousCount, recordUserQuestion } from '$lib/server/queries';
+import { parseSSE } from '$lib/sse-parser';
+
+const VALID_REGULATIONS = new Set([
+  'auto', 'K2', 'K3', 'K2K3', 'Bokföring', 'Fusioner', 'BRF',
+  'Årsbokslut', 'Gränsvärden', 'K1 Enskilda', 'K1 Ideella',
+]);
 
 export const POST: RequestHandler = async ({ request, locals }) => {
   const { message, history = [], regulation = 'auto' } = await request.json();
 
-  if (!message || typeof message !== 'string') {
-    return json({ error: 'Message required' }, { status: 400 });
+  if (typeof message !== 'string' || message.length === 0 || message.length > 10000) {
+    return json({ error: 'invalid_message' }, { status: 400 });
+  }
+  if (!Array.isArray(history) || history.length > 20) {
+    return json({ error: 'invalid_history' }, { status: 400 });
+  }
+  for (const m of history) {
+    if (!m || typeof m !== 'object') return json({ error: 'invalid_history_entry' }, { status: 400 });
+    if (m.role !== 'user' && m.role !== 'assistant') return json({ error: 'invalid_role' }, { status: 400 });
+    if (typeof m.content !== 'string' || m.content.length > 10000) return json({ error: 'invalid_content' }, { status: 400 });
+  }
+  if (typeof regulation !== 'string' || !VALID_REGULATIONS.has(regulation)) {
+    return json({ error: 'invalid_regulation' }, { status: 400 });
   }
 
   if (!locals.user && locals.questionCount >= 5) {
@@ -59,41 +76,29 @@ export const POST: RequestHandler = async ({ request, locals }) => {
   const stream = new ReadableStream({
     async start(controller) {
       const reader = upstreamBody.getReader();
-      const decoder = new TextDecoder();
-      let buffer = '';
+      const encoder = new TextEncoder();
 
       try {
-        while (true) {
-          const { done, value } = await reader.read();
-          if (done) break;
-
-          buffer += decoder.decode(value, { stream: true });
-          const lines = buffer.split('\n');
-          buffer = lines.pop() || '';
-
-          for (const line of lines) {
-            if (!line.startsWith('data: ')) continue;
-            const data = line.slice(6);
-            if (data === '[DONE]') {
+        for await (const data of parseSSE(reader)) {
+          if (data === '[DONE]') {
+            controller.enqueue(
+              encoder.encode(
+                `data: ${JSON.stringify({ done: true, sources: matches.map((m) => m.label) })}\n\n`
+              )
+            );
+            controller.close();
+            return;
+          }
+          try {
+            const parsed = JSON.parse(data);
+            const content = parsed.choices?.[0]?.delta?.content;
+            if (content) {
               controller.enqueue(
-                new TextEncoder().encode(
-                  `data: ${JSON.stringify({ done: true, sources: matches.map((m) => m.label) })}\n\n`
-                )
+                encoder.encode(`data: ${JSON.stringify({ content })}\n\n`)
               );
-              controller.close();
-              return;
             }
-            try {
-              const parsed = JSON.parse(data);
-              const content = parsed.choices?.[0]?.delta?.content;
-              if (content) {
-                controller.enqueue(
-                  new TextEncoder().encode(`data: ${JSON.stringify({ content })}\n\n`)
-                );
-              }
-            } catch {
-              // Skip unparseable chunks
-            }
+          } catch {
+            // Skip unparseable chunks
           }
         }
         controller.close();
